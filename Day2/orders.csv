@@ -1,0 +1,401 @@
+order_id,datetime,menu,category,qty,price,total,channel,customer,status
+A1001,2026-05-24 7:46,Iced Latte,Coffee,3,65,195,Delivery,,Completed
+A1002,2026-05-24 8:14,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1003,2026-05-24 12:35,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1004,2026-05-24 12:39,Hot Cappuccino,Coffee,2,60,120,Delivery,,Completed
+A1005,2026-05-24 16:15,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1006,2026-05-25 7:21,Butter Croissant,Snacks,2,55,110,Walk-in,,Completed
+A1007,2026-05-25 8:42,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1008,2026-05-25 10:03,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1009,2026-05-26 7:20,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1010,2026-05-26 8:15,Choc Chip Cookie,Snacks,3,35,105,Walk-in,,Completed
+A1011,2026-05-26 8:18,Iced Americano,Coffee,1,55,55,Delivery,,Completed
+A1012,2026-05-26 11:09,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1013,2026-05-26 12:42,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1014,2026-05-27 9:56,Hot Cappuccino,Coffee,2,60,120,Delivery,,Completed
+A1015,2026-05-27 12:22,Butter Croissant,Snacks,3,55,165,Walk-in,,Completed
+A1016,2026-05-28 10:13,Chocolate Cake,Snacks,3,75,225,Walk-in,,Completed
+A1017,2026-05-29 7:27,Hot Cappuccino,Coffee,2,60,120,Walk-in,,Completed
+A1018,2026-05-29 13:00,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1019,2026-05-30 10:50,Espresso,Coffee,1,50,50,Walk-in,,Completed
+A1020,2026-05-30 11:00,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1021,2026-05-30 12:12,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1022,2026-05-30 12:14,Espresso,Coffee,1,50,50,Walk-in,,Completed
+A1023,2026-05-30 16:14,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1024,2026-05-30 18:56,Lemon Tea,Tea,4,50,200,Delivery,,Completed
+A1025,2026-05-30 18:59,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1026,2026-05-31 8:21,Hot Cappuccino,Coffee,1,60,60,Walk-in,,Completed
+A1027,2026-05-31 9:29,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1028,2026-05-31 14:35,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1029,2026-05-31 17:50,Butter Croissant,Snacks,2,55,110,Walk-in,,Completed
+A1030,2026-05-31 18:55,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1031,2026-06-01 11:40,Iced Americano,Coffee,1,55,55,Delivery,,Completed
+A1032,2026-06-01 12:09,Choc Chip Cookie,Snacks,1,35,35,Walk-in,,Completed
+A1033,2026-06-01 14:21,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1034,2026-06-01 15:55,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1035,2026-06-01 18:44,Choc Chip Cookie,Snacks,1,35,35,Delivery,,Completed
+A1036,2026-06-01 19:39,Chocolate Cake,Snacks,1,75,75,Walk-in,,Completed
+A1037,2026-06-02 10:35,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1038,2026-06-02 13:14,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1039,2026-06-03 7:05,Choc Chip Cookie,Snacks,2,35,70,Walk-in,,Completed
+A1040,2026-06-03 10:46,Fresh Orange Juice,Other Drinks,1,60,60,Delivery,,Completed
+A1041,2026-06-04 8:10,Butter Croissant,Snacks,1,55,55,Delivery,,Completed
+A1042,2026-06-04 9:59,Iced Mocha,Coffee,2,70,140,Delivery,,Completed
+A1043,2026-06-04 18:47,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1044,2026-06-04 19:06,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1045,2026-06-05 14:28,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1046,2026-06-05 16:53,Iced Mocha,Coffee,2,70,140,Walk-in,,Completed
+A1047,2026-06-06 10:04,Fresh Orange Juice,Other Drinks,1,60,60,Walk-in,,Completed
+A1048,2026-06-06 14:15,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1049,2026-06-07 10:48,Iced Americano,Coffee,2,55,110,Delivery,,Completed
+A1050,2026-06-08 9:42,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1051,2026-06-08 10:08,Fresh Orange Juice,Other Drinks,1,60,60,Delivery,,Completed
+A1052,2026-06-09 10:34,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1053,2026-06-09 13:15,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1054,2026-06-10 8:44,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1055,2026-06-10 9:08,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1056,2026-06-10 9:43,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1057,2026-06-10 18:56,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1058,2026-06-11 7:04,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1059,2026-06-11 12:22,Iced Mocha,Coffee,1,70,70,Delivery,,Completed
+A1060,2026-06-11 17:37,Lemon Soda,Other Drinks,1,45,45,Delivery,,Completed
+A1061,2026-06-12 7:16,Iced Latte,Coffee,4,65,260,Walk-in,,Completed
+A1062,2026-06-12 8:05,Espresso,Coffee,2,50,100,Walk-in,,Completed
+A1063,2026-06-12 15:11,Choc Chip Cookie,Snacks,1,35,35,Delivery,,Completed
+A1064,2026-06-12 18:06,Lemon Soda,Other Drinks,1,45,45,Walk-in,,Completed
+A1065,2026-06-13 9:29,Thai Iced Tea,Tea,4,55,220,Delivery,,Completed
+A1066,2026-06-13 10:43,Fresh Orange Juice,Other Drinks,1,60,60,Delivery,,Completed
+A1067,2026-06-13 15:42,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1068,2026-06-13 17:32,Hot Cappuccino,Coffee,1,60,60,Walk-in,,Completed
+A1069,2026-06-13 17:55,Hot Cappuccino,Coffee,1,60,60,Walk-in,,Completed
+A1070,2026-06-14 12:09,Hot Cappuccino,Coffee,1,60,60,Pre-order,Gift / 089-431-9005,Completed
+A1071,2026-06-14 14:11,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1072,2026-06-14 16:35,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1073,2026-06-14 17:54,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1074,2026-06-15 10:06,Choc Chip Cookie,Snacks,1,35,35,Walk-in,,Completed
+A1075,2026-06-15 12:36,Thai Iced Tea,Tea,3,55,165,Walk-in,,Completed
+A1076,2026-06-15 19:07,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1077,2026-06-17 9:28,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1078,2026-06-17 18:14,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1079,2026-06-18 8:29,Iced Americano,Coffee,3,55,165,Walk-in,,Completed
+A1080,2026-06-18 10:34,Lemon Tea,Tea,2,50,100,Pre-order,Nat / 060-783-5905,Completed
+A1081,2026-06-18 13:41,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1082,2026-06-18 17:15,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1083,2026-06-19 7:18,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1084,2026-06-19 7:35,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1085,2026-06-19 16:10,Iced Latte,Coffee,1,65,65,Delivery,,Completed
+A1086,2026-06-20 7:27,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1087,2026-06-20 7:59,Hot Cappuccino,Coffee,4,60,240,Delivery,,Completed
+A1088,2026-06-20 11:30,Iced Latte,Coffee,1,65,65,Delivery,,Completed
+A1089,2026-06-21 9:55,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1090,2026-06-21 15:35,Iced Mocha,Coffee,1,70,70,Delivery,,Completed
+A1091,2026-06-22 7:24,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1092,2026-06-22 8:44,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1093,2026-06-23 9:42,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1094,2026-06-23 10:59,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1095,2026-06-23 12:21,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1096,2026-06-24 11:33,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1097,2026-06-24 12:01,Iced Latte,Coffee,1,65,65,Pre-order,Ploy / 063-170-4394,Completed
+A1098,2026-06-24 15:18,Lemon Tea,Tea,2,50,100,Walk-in,,Completed
+A1099,2026-06-25 14:11,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1100,2026-06-25 14:48,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1101,2026-06-25 19:58,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1102,2026-06-26 10:19,Espresso,Coffee,1,50,50,Walk-in,,Completed
+A1103,2026-06-26 17:24,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1104,2026-06-26 17:32,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1105,2026-06-27 10:40,Hot Cappuccino,Coffee,1,60,60,Walk-in,,Completed
+A1106,2026-06-27 10:42,Hot Cappuccino,Coffee,1,60,60,Pre-order,A / 083-408-4460,Completed
+A1107,2026-06-27 13:23,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1108,2026-06-28 7:14,Choc Chip Cookie,Snacks,2,35,70,Walk-in,,Completed
+A1109,2026-06-28 10:09,Lemon Soda,Other Drinks,1,45,45,Delivery,,Completed
+A1110,2026-06-28 16:06,Thai Iced Tea,Tea,1,55,55,Delivery,,Completed
+A1111,2026-06-29 7:48,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1112,2026-06-29 9:36,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1113,2026-06-29 10:41,Lemon Soda,Other Drinks,1,45,45,Delivery,,Completed
+A1114,2026-06-29 10:44,Hot Cappuccino,Coffee,1,60,60,Walk-in,,Completed
+A1115,2026-06-30 9:29,Iced Mocha,Coffee,2,70,140,Walk-in,,Completed
+A1116,2026-07-01 8:16,Green Tea Latte,Tea,3,65,195,Walk-in,,Completed
+A1117,2026-07-01 8:22,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1118,2026-07-01 10:38,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1119,2026-07-01 11:43,Choc Chip Cookie,Snacks,1,35,35,Walk-in,,Completed
+A1120,2026-07-01 12:25,Chocolate Cake,Snacks,1,75,75,Walk-in,,Completed
+A1121,2026-07-01 12:53,Espresso,Coffee,1,50,50,Pre-order,A / 065-322-8264,Completed
+A1122,2026-07-01 15:30,Lemon Soda,Other Drinks,1,45,45,Delivery,,Completed
+A1123,2026-07-01 15:41,Hot Cappuccino,Coffee,1,60,60,Walk-in,,Completed
+A1124,2026-07-01 18:19,Fresh Orange Juice,Other Drinks,1,60,60,Walk-in,,Completed
+A1125,2026-07-02 8:49,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1126,2026-07-02 11:40,Lemon Soda,Other Drinks,2,45,90,Walk-in,,Completed
+A1127,2026-07-02 11:42,Butter Croissant,Snacks,1,55,55,Delivery,,Completed
+A1128,2026-07-02 11:51,Iced Mocha,Coffee,1,70,70,Delivery,,Completed
+A1129,2026-07-02 11:52,Chocolate Cake,Snacks,1,75,75,Walk-in,,Completed
+A1130,2026-07-02 13:49,Lemon Soda,Other Drinks,1,45,45,Delivery,,Completed
+A1131,2026-07-02 15:29,Lemon Soda,Other Drinks,1,45,45,Pre-order,Dew / 066-966-6992,Completed
+A1132,2026-07-03 7:23,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1133,2026-07-03 7:53,Iced Latte,Coffee,1,65,65,Delivery,,Completed
+A1134,2026-07-03 11:55,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1135,2026-07-03 12:31,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1136,2026-07-03 12:59,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1137,2026-07-03 13:31,Choc Chip Cookie,Snacks,1,35,35,Walk-in,,Completed
+A1138,2026-07-03 15:00,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1139,2026-07-04 7:47,Espresso,Coffee,3,50,150,Walk-in,,Completed
+A1140,2026-07-04 8:48,Lemon Tea,Tea,2,50,100,Delivery,,Completed
+A1141,2026-07-04 8:48,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1142,2026-07-04 9:11,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1143,2026-07-04 9:32,Choc Chip Cookie,Snacks,2,35,70,Walk-in,,Completed
+A1144,2026-07-04 9:38,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1145,2026-07-04 11:29,Green Tea Latte,Tea,1,65,65,Pre-order,Dew / 096-802-2768,Completed
+A1146,2026-07-05 7:28,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1147,2026-07-05 10:28,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1148,2026-07-05 11:24,Espresso,Coffee,2,50,100,Delivery,,Completed
+A1149,2026-07-05 12:01,Iced Latte,Coffee,4,65,260,Delivery,,Completed
+A1150,2026-07-05 17:00,Iced Americano,Coffee,4,55,220,Pre-order,Gift / 092-212-1422,Completed
+A1151,2026-07-06 12:55,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1152,2026-07-06 19:15,Thai Iced Tea,Tea,1,55,55,Delivery,,Completed
+A1153,2026-07-07 7:32,Lemon Soda,Other Drinks,1,45,45,Walk-in,,Completed
+A1154,2026-07-07 7:44,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1155,2026-07-07 8:54,Chocolate Cake,Snacks,1,75,75,Walk-in,,Completed
+A1156,2026-07-07 9:24,Chocolate Cake,Snacks,1,75,75,Walk-in,,Completed
+A1157,2026-07-07 13:57,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1158,2026-07-08 9:41,Chocolate Cake,Snacks,2,75,150,Walk-in,,Completed
+A1159,2026-07-08 10:15,Chocolate Cake,Snacks,1,75,75,Walk-in,,Completed
+A1160,2026-07-08 10:57,Butter Croissant,Snacks,1,55,55,Pre-order,Nat / 083-205-3399,Completed
+A1161,2026-07-08 11:34,Hot Cappuccino,Coffee,3,60,180,Delivery,,Completed
+A1162,2026-07-08 12:57,Green Tea Latte,Tea,1,65,65,Delivery,,Completed
+A1163,2026-07-08 14:11,Iced Americano,Coffee,2,55,110,Delivery,,Completed
+A1164,2026-07-09 9:39,Lemon Tea,Tea,2,50,100,Delivery,,Completed
+A1165,2026-07-09 11:58,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1166,2026-07-10 8:08,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1167,2026-07-10 8:59,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1168,2026-07-10 9:16,Lemon Tea,Tea,2,50,100,Delivery,,Completed
+A1169,2026-07-10 9:43,Iced Americano,Coffee,1,55,55,Delivery,,Completed
+A1170,2026-07-10 10:39,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1171,2026-07-10 18:26,Thai Iced Tea,Tea,2,55,110,Delivery,,Completed
+A1172,2026-07-11 7:25,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1173,2026-07-11 8:17,Chocolate Cake,Snacks,1,75,75,Walk-in,,Completed
+A1174,2026-07-11 9:37,Iced Mocha,Coffee,2,70,140,Pre-order,Poon / 096-441-6260,Completed
+A1175,2026-07-11 10:19,Lemon Tea,Tea,3,50,150,Walk-in,,Completed
+A1176,2026-07-11 10:29,Thai Iced Tea,Tea,3,55,165,Delivery,,Completed
+A1177,2026-07-11 12:43,Green Tea Latte,Tea,1,65,65,Delivery,,Completed
+A1178,2026-07-11 13:19,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1179,2026-07-11 15:10,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1180,2026-07-11 17:22,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1181,2026-07-11 17:47,Espresso,Coffee,3,50,150,Walk-in,,Completed
+A1182,2026-07-12 10:25,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1183,2026-07-12 11:03,Green Tea Latte,Tea,2,65,130,Delivery,,Completed
+A1184,2026-07-12 17:31,Choc Chip Cookie,Snacks,1,35,35,Walk-in,,Completed
+A1185,2026-07-13 8:03,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1186,2026-07-13 14:54,Iced Mocha,Coffee,3,70,210,Walk-in,,Completed
+A1187,2026-07-13 15:38,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1188,2026-07-13 16:30,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1189,2026-07-13 16:54,Thai Iced Tea,Tea,3,55,165,Walk-in,,Completed
+A1190,2026-07-14 7:58,Butter Croissant,Snacks,2,55,110,Walk-in,,Completed
+A1191,2026-07-14 8:23,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1192,2026-07-14 9:20,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1193,2026-07-14 10:58,Lemon Tea,Tea,4,50,200,Walk-in,,Completed
+A1194,2026-07-15 9:16,Hot Cappuccino,Coffee,1,60,60,Delivery,,Completed
+A1195,2026-07-15 11:10,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1196,2026-07-15 11:22,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1197,2026-07-15 11:41,Hot Cappuccino,Coffee,1,60,60,Walk-in,,Completed
+A1198,2026-07-16 7:20,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1199,2026-07-16 9:08,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1200,2026-07-16 9:18,Fresh Orange Juice,Other Drinks,1,60,60,Pre-order,Nat / 094-108-1803,Completed
+A1201,2026-07-16 15:17,Iced Latte,Coffee,1,65,65,Delivery,,Completed
+A1202,2026-07-16 16:22,Chocolate Cake,Snacks,1,75,75,Delivery,,Completed
+A1203,2026-07-17 9:14,Iced Americano,Coffee,1,55,55,Delivery,,Completed
+A1204,2026-07-17 13:07,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1205,2026-07-17 19:48,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1206,2026-07-18 7:17,Thai Iced Tea,Tea,3,55,165,Walk-in,,Completed
+A1207,2026-07-18 9:27,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1208,2026-07-18 11:24,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1209,2026-07-18 13:54,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1210,2026-07-18 16:45,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1211,2026-07-19 12:55,Fresh Orange Juice,Other Drinks,1,60,60,Walk-in,,Completed
+A1212,2026-07-20 13:43,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1213,2026-07-20 19:50,Chocolate Cake,Snacks,4,75,300,Walk-in,,Completed
+A1214,2026-07-21 9:34,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1215,2026-07-21 9:47,Chocolate Cake,Snacks,3,75,225,Walk-in,,Completed
+A1216,2026-07-21 10:05,Thai Iced Tea,Tea,3,55,165,Delivery,,Completed
+A1217,2026-07-21 12:58,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1218,2026-07-22 7:01,Espresso,Coffee,1,50,50,Walk-in,,Completed
+A1219,2026-07-22 8:13,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1220,2026-07-22 8:49,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1221,2026-07-22 9:07,Iced Mocha,Coffee,2,70,140,Delivery,,Completed
+A1222,2026-07-22 11:01,Fresh Orange Juice,Other Drinks,2,60,120,Walk-in,,Completed
+A1223,2026-07-22 13:28,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1224,2026-07-23 10:09,Butter Croissant,Snacks,4,55,220,Walk-in,,Completed
+A1225,2026-07-23 10:58,Iced Mocha,Coffee,3,70,210,Walk-in,,Completed
+A1226,2026-07-24 7:04,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1227,2026-07-24 13:34,Iced Mocha,Coffee,1,70,70,Walk-in,,Completed
+A1228,2026-07-24 15:17,Butter Croissant,Snacks,1,55,55,Pre-order,Poon / 063-813-4700,Completed
+A1229,2026-07-24 16:05,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1230,2026-07-24 18:19,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1231,2026-07-25 9:09,Hot Cappuccino,Coffee,2,60,120,Delivery,,Completed
+A1232,2026-07-25 9:15,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1233,2026-07-25 9:19,Espresso,Coffee,1,50,50,Walk-in,,Completed
+A1234,2026-07-25 9:23,Butter Croissant,Snacks,1,55,55,Walk-in,,Completed
+A1235,2026-07-25 10:31,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1236,2026-07-25 15:46,Green Tea Latte,Tea,1,65,65,Walk-in,,Completed
+A1237,2026-07-25 17:15,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1238,2026-07-25 18:37,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1239,2026-07-26 7:41,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1240,2026-07-26 7:55,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1241,2026-07-26 10:09,Iced Americano,Coffee,3,55,165,Delivery,,Completed
+A1242,2026-07-26 10:09,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1243,2026-07-26 10:41,Iced Latte,Coffee,4,65,260,Walk-in,,Completed
+A1244,2026-07-27 7:24,Chocolate Cake,Snacks,1,75,75,Pre-order,Mint / 099-838-6123,Completed
+A1245,2026-07-27 11:43,Butter Croissant,Snacks,2,55,110,Walk-in,,Completed
+A1246,2026-07-27 11:49,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1247,2026-07-27 12:35,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1248,2026-07-27 12:46,Green Tea Latte,Tea,1,65,65,Pre-order,Ice / 096-484-2314,Completed
+A1249,2026-07-27 14:13,Iced Americano,Coffee,1,55,55,Delivery,,Completed
+A1250,2026-07-27 18:35,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1251,2026-07-28 9:01,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1252,2026-07-28 9:25,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1253,2026-07-28 15:34,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1254,2026-07-28 18:54,Thai Iced Tea,Tea,1,55,55,Delivery,,Completed
+A1255,2026-07-28 19:30,Choc Chip Cookie,Snacks,2,35,70,Delivery,,Completed
+A1256,2026-07-29 8:19,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1257,2026-07-29 9:52,Butter Croissant,Snacks,1,55,55,Delivery,,Completed
+A1258,2026-07-29 15:44,Lemon Tea,Tea,1,50,50,Pre-order,A / 086-337-2245,Completed
+A1259,2026-07-29 19:41,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1260,2026-07-30 8:53,Butter Croissant,Snacks,2,55,110,Walk-in,,Completed
+A1261,2026-07-30 9:33,Choc Chip Cookie,Snacks,2,35,70,Walk-in,,Completed
+A1262,2026-07-30 12:40,Choc Chip Cookie,Snacks,2,35,70,Walk-in,,Completed
+A1263,2026-07-31 7:51,Green Tea Latte,Tea,2,65,130,Delivery,,Completed
+A1264,2026-07-31 8:20,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1265,2026-07-31 10:51,Fresh Orange Juice,Other Drinks,1,60,60,Delivery,,Completed
+A1266,2026-07-31 12:25,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1267,2026-07-31 13:08,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1268,2026-07-31 13:40,Choc Chip Cookie,Snacks,1,35,35,Walk-in,,Completed
+A1269,2026-07-31 17:13,Lemon Soda,Other Drinks,4,45,180,Walk-in,,Completed
+A1270,2026-07-31 17:33,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1271,2026-08-01 7:26,Iced Mocha,Coffee,1,70,70,Delivery,,Completed
+A1272,2026-08-01 8:42,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1273,2026-08-01 8:59,Green Tea Latte,Tea,2,65,130,Pre-order,Nan / 099-444-9311,Completed
+A1274,2026-08-01 11:37,Choc Chip Cookie,Snacks,3,35,105,Walk-in,,Completed
+A1275,2026-08-01 12:12,Lemon Soda,Other Drinks,1,45,45,Walk-in,,Completed
+A1276,2026-08-01 15:47,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1277,2026-08-01 16:00,Iced Americano,Coffee,2,55,110,Delivery,,Completed
+A1278,2026-08-01 17:11,Lemon Soda,Other Drinks,2,45,90,Delivery,,Completed
+A1279,2026-08-02 7:09,Lemon Tea,Tea,4,50,200,Walk-in,,Completed
+A1280,2026-08-02 9:41,Butter Croissant,Snacks,3,55,165,Walk-in,,Completed
+A1281,2026-08-02 10:28,Choc Chip Cookie,Snacks,2,35,70,Pre-order,Poon / 067-476-9507,Completed
+A1282,2026-08-02 11:42,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1283,2026-08-02 16:25,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1284,2026-08-03 8:34,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1285,2026-08-03 9:28,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1286,2026-08-03 10:13,Iced Mocha,Coffee,3,70,210,Delivery,,Completed
+A1287,2026-08-03 10:26,Butter Croissant,Snacks,3,55,165,Walk-in,,Completed
+A1288,2026-08-03 12:05,Iced Latte,Coffee,1,65,65,Delivery,,Completed
+A1289,2026-08-03 14:05,Iced Mocha,Coffee,2,70,140,Walk-in,,Completed
+A1290,2026-08-03 18:00,Iced Americano,Coffee,1,55,55,Delivery,,Completed
+A1291,2026-08-04 8:10,Espresso,Coffee,1,50,50,Walk-in,,Completed
+A1292,2026-08-04 10:03,Green Tea Latte,Tea,3,65,195,Walk-in,,Completed
+A1293,2026-08-04 12:23,Thai Iced Tea,Tea,3,55,165,Walk-in,,Completed
+A1294,2026-08-04 14:36,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1295,2026-08-04 15:52,Iced Americano,Coffee,2,55,110,Delivery,,Completed
+A1296,2026-08-04 18:19,Butter Croissant,Snacks,2,55,110,Walk-in,,Completed
+A1297,2026-08-05 9:33,Hot Cappuccino,Coffee,2,60,120,Walk-in,,Completed
+A1298,2026-08-05 9:36,Hot Cappuccino,Coffee,2,60,120,Walk-in,,Completed
+A1299,2026-08-05 10:15,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1300,2026-08-05 17:23,Hot Cappuccino,Coffee,1,60,60,Delivery,,Completed
+A1301,2026-08-05 19:43,Green Tea Latte,Tea,2,65,130,Walk-in,,Completed
+A1302,2026-08-06 7:21,Lemon Tea,Tea,4,50,200,Walk-in,,Completed
+A1303,2026-08-06 7:42,Iced Latte,Coffee,4,65,260,Walk-in,,Completed
+A1304,2026-08-06 8:34,Iced Mocha,Coffee,2,70,140,Pre-order,Dew / 080-405-8585,Completed
+A1305,2026-08-06 9:05,Thai Iced Tea,Tea,3,55,165,Delivery,,Completed
+A1306,2026-08-06 9:24,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1307,2026-08-06 9:30,Thai Iced Tea,Tea,2,55,110,Delivery,,Completed
+A1308,2026-08-06 9:46,Espresso,Coffee,2,50,100,Walk-in,,Completed
+A1309,2026-08-06 10:22,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1310,2026-08-06 13:55,Lemon Tea,Tea,3,50,150,Walk-in,,Completed
+A1311,2026-08-06 16:09,Butter Croissant,Snacks,4,55,220,Walk-in,,Completed
+A1312,2026-08-07 10:31,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1313,2026-08-07 11:19,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1314,2026-08-07 14:24,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1315,2026-08-08 8:00,Lemon Soda,Other Drinks,2,45,90,Walk-in,,Completed
+A1316,2026-08-08 10:18,Iced Americano,Coffee,4,55,220,Walk-in,,Completed
+A1317,2026-08-08 10:30,Hot Cappuccino,Coffee,4,60,240,Delivery,,Completed
+A1318,2026-08-08 10:32,Choc Chip Cookie,Snacks,4,35,140,Delivery,,Completed
+A1319,2026-08-08 11:30,Iced Americano,Coffee,4,55,220,Walk-in,,Completed
+A1320,2026-08-08 13:59,Lemon Tea,Tea,2,50,100,Walk-in,,Completed
+A1321,2026-08-08 15:10,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1322,2026-08-08 15:46,Choc Chip Cookie,Snacks,3,35,105,Walk-in,,Completed
+A1323,2026-08-08 17:41,Lemon Soda,Other Drinks,2,45,90,Delivery,,Completed
+A1324,2026-08-09 12:38,Iced Latte,Coffee,1,65,65,Delivery,,Completed
+A1325,2026-08-09 12:45,Choc Chip Cookie,Snacks,1,35,35,Walk-in,,Completed
+A1326,2026-08-09 16:14,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1327,2026-08-09 17:19,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1328,2026-08-09 18:59,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1329,2026-08-10 7:54,Green Tea Latte,Tea,3,65,195,Walk-in,,Completed
+A1330,2026-08-10 9:05,Lemon Tea,Tea,2,50,100,Walk-in,,Completed
+A1331,2026-08-10 13:12,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1332,2026-08-11 7:46,Iced Americano,Coffee,4,55,220,Walk-in,,Completed
+A1333,2026-08-11 11:22,Hot Cappuccino,Coffee,2,60,120,Delivery,,Completed
+A1334,2026-08-11 13:05,Iced Americano,Coffee,2,55,110,Delivery,,Completed
+A1335,2026-08-11 14:36,Fresh Orange Juice,Other Drinks,4,60,240,Delivery,,Completed
+A1336,2026-08-12 7:57,Thai Iced Tea,Tea,3,55,165,Walk-in,,Completed
+A1337,2026-08-12 8:12,Butter Croissant,Snacks,2,55,110,Walk-in,,Completed
+A1338,2026-08-12 13:45,Thai Iced Tea,Tea,2,55,110,Walk-in,,Completed
+A1339,2026-08-12 14:01,Iced Americano,Coffee,4,55,220,Walk-in,,Completed
+A1340,2026-08-13 9:21,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1341,2026-08-13 11:24,Iced Latte,Coffee,2,65,130,Delivery,,Completed
+A1342,2026-08-13 13:35,Thai Iced Tea,Tea,3,55,165,Delivery,,Completed
+A1343,2026-08-13 18:02,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1344,2026-08-13 19:18,Lemon Tea,Tea,4,50,200,Walk-in,,Completed
+A1345,2026-08-14 10:34,Iced Americano,Coffee,3,55,165,Walk-in,,Completed
+A1346,2026-08-14 10:40,Fresh Orange Juice,Other Drinks,3,60,180,Walk-in,,Completed
+A1347,2026-08-14 13:42,Choc Chip Cookie,Snacks,2,35,70,Delivery,,Completed
+A1348,2026-08-15 7:43,Lemon Soda,Other Drinks,4,45,180,Walk-in,,Completed
+A1349,2026-08-15 9:29,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1350,2026-08-15 10:02,Choc Chip Cookie,Snacks,3,35,105,Walk-in,,Completed
+A1351,2026-08-15 12:44,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1352,2026-08-15 13:40,Espresso,Coffee,2,50,100,Walk-in,,Completed
+A1353,2026-08-15 15:11,Lemon Soda,Other Drinks,4,45,180,Delivery,,Completed
+A1354,2026-08-15 15:34,Espresso,Coffee,1,50,50,Walk-in,,Completed
+A1355,2026-08-16 9:07,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1356,2026-08-16 9:45,Iced Latte,Coffee,4,65,260,Walk-in,,Completed
+A1357,2026-08-16 9:48,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1358,2026-08-16 9:49,Green Tea Latte,Tea,2,65,130,Pre-order,Belle / 084-902-8381,Completed
+A1359,2026-08-16 9:52,Chocolate Cake,Snacks,3,75,225,Delivery,,Completed
+A1360,2026-08-16 10:35,Thai Iced Tea,Tea,1,55,55,Walk-in,,Completed
+A1361,2026-08-16 11:41,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1362,2026-08-16 13:45,Iced Americano,Coffee,2,55,110,Delivery,,Completed
+A1363,2026-08-16 15:29,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1364,2026-08-16 17:14,Iced Americano,Coffee,3,55,165,Delivery,,Completed
+A1365,2026-08-16 17:41,Lemon Tea,Tea,1,50,50,Walk-in,,Completed
+A1366,2026-08-17 7:08,Choc Chip Cookie,Snacks,3,35,105,Delivery,,Completed
+A1367,2026-08-17 7:56,Green Tea Latte,Tea,1,65,65,Pre-order,Poon / 086-404-8430,Completed
+A1368,2026-08-17 8:04,Espresso,Coffee,4,50,200,Walk-in,,Completed
+A1369,2026-08-17 8:24,Hot Cappuccino,Coffee,2,60,120,Walk-in,,Completed
+A1370,2026-08-17 8:37,Hot Cappuccino,Coffee,2,60,120,Walk-in,,Completed
+A1371,2026-08-17 9:57,Thai Iced Tea,Tea,2,55,110,Delivery,,Completed
+A1372,2026-08-17 10:22,Lemon Soda,Other Drinks,3,45,135,Walk-in,,Completed
+A1373,2026-08-17 13:34,Fresh Orange Juice,Other Drinks,3,60,180,Walk-in,,Completed
+A1374,2026-08-17 13:37,Espresso,Coffee,2,50,100,Delivery,,Completed
+A1375,2026-08-17 17:07,Iced Americano,Coffee,1,55,55,Walk-in,,Completed
+A1376,2026-08-17 17:15,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1377,2026-08-17 18:07,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1378,2026-08-18 11:09,Iced Latte,Coffee,3,65,195,Walk-in,,Completed
+A1379,2026-08-18 12:46,Choc Chip Cookie,Snacks,2,35,70,Delivery,,Completed
+A1380,2026-08-18 12:58,Butter Croissant,Snacks,3,55,165,Walk-in,,Completed
+A1381,2026-08-18 13:54,Lemon Soda,Other Drinks,4,45,180,Walk-in,,Completed
+A1382,2026-08-19 7:03,Iced Latte,Coffee,1,65,65,Walk-in,,Completed
+A1383,2026-08-19 10:45,Espresso,Coffee,3,50,150,Walk-in,,Completed
+A1384,2026-08-19 16:21,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1385,2026-08-20 9:05,Choc Chip Cookie,Snacks,2,35,70,Walk-in,,Completed
+A1386,2026-08-20 9:29,Fresh Orange Juice,Other Drinks,1,60,60,Walk-in,,Completed
+A1387,2026-08-21 7:49,Green Tea Latte,Tea,1,65,65,Delivery,,Completed
+A1388,2026-08-21 8:40,Espresso,Coffee,2,50,100,Walk-in,,Completed
+A1389,2026-08-21 13:50,Iced Americano,Coffee,2,55,110,Walk-in,,Completed
+A1390,2026-08-21 16:47,Lemon Tea,Tea,3,50,150,Walk-in,,Completed
+A1391,2026-08-21 17:07,Iced Latte,Coffee,2,65,130,Walk-in,,Completed
+A1392,2026-08-21 18:27,Thai Iced Tea,Tea,3,55,165,Delivery,,Completed
+A1393,2026-08-22 7:52,Green Tea Latte,Tea,3,65,195,Walk-in,,Completed
+A1394,2026-08-22 8:08,Espresso,Coffee,1,50,50,Pre-order,Belle / 098-582-9806,Completed
+A1395,2026-08-22 8:35,Green Tea Latte,Tea,3,65,195,Walk-in,,Completed
+A1396,2026-08-22 9:02,Lemon Tea,Tea,3,50,150,Walk-in,,Completed
+A1397,2026-08-22 9:07,Thai Iced Tea,Tea,2,55,110,Delivery,,Completed
+A1398,2026-08-22 11:42,Espresso,Coffee,2,50,100,Pre-order,Poon / 065-659-6804,Completed
+A1399,2026-08-22 15:21,Iced Mocha,Coffee,2,70,140,Delivery,,Completed
+A1400,2026-08-22 15:43,Iced Mocha,Coffee,3,70,210,Walk-in,,Completed

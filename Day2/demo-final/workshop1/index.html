@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="สรุปยอดขายรายสัปดาห์จากข้อมูลคำสั่งซื้อ พร้อมอันดับเมนูขายดี"
+    />
+    <title>สรุปยอดขายประจำสัปดาห์</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="กลับไปด้านบน">
+        <span class="brand-mark" aria-hidden="true">ส</span>
+        <span>สรุปหน้าร้าน</span>
+      </a>
+      <div class="data-status" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="dataStatus">กำลังอ่าน orders.csv</span>
+      </div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="report-head reveal">
+        <div>
+          <p class="kicker">รายงานประจำสัปดาห์</p>
+          <h1>ร้านขายอะไรได้ดี<br />ในสัปดาห์ที่แล้ว</h1>
+        </div>
+        <div class="report-period" aria-label="ช่วงเวลาของรายงาน">
+          <span>ช่วงวันที่</span>
+          <strong id="periodLabel">10-16 สิงหาคม 2569</strong>
+          <small>เทียบกับ 3-9 สิงหาคม 2569</small>
+        </div>
+      </section>
+
+      <div id="loadingState" class="loading-state" aria-live="polite">
+        <div class="skeleton skeleton-wide"></div>
+        <div class="skeleton-grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+
+      <section id="dashboard" class="dashboard" hidden>
+        <section class="metrics" aria-label="ตัวเลขสรุป">
+          <article class="metric metric-primary reveal" style="--delay: 0ms">
+            <p>ยอดขายสุทธิ</p>
+            <strong id="revenueValue">฿0</strong>
+            <div id="revenueChange" class="change"></div>
+          </article>
+          <article class="metric reveal" style="--delay: 70ms">
+            <p>ขายได้ทั้งหมด</p>
+            <strong id="unitsValue">0 <span>ชิ้น</span></strong>
+            <div id="unitsChange" class="change"></div>
+          </article>
+          <article class="metric reveal" style="--delay: 140ms">
+            <p>จำนวนออเดอร์</p>
+            <strong id="ordersValue">0 <span>ออเดอร์</span></strong>
+            <div id="ordersChange" class="change"></div>
+          </article>
+          <article class="metric reveal" style="--delay: 210ms">
+            <p>ยอดเฉลี่ยต่อออเดอร์</p>
+            <strong id="averageValue">฿0</strong>
+            <div id="averageChange" class="change"></div>
+          </article>
+        </section>
+
+        <section class="insight-strip reveal" aria-labelledby="insightTitle">
+          <div class="insight-number" aria-hidden="true">01</div>
+          <div>
+            <h2 id="insightTitle">ข้อสรุปที่ควรรู้</h2>
+            <p id="mainInsight"></p>
+          </div>
+          <div class="insight-support">
+            <span>วันที่ขายดีที่สุด</span>
+            <strong id="bestDay"></strong>
+          </div>
+        </section>
+
+        <div class="content-grid">
+          <section class="ranking-panel reveal" aria-labelledby="rankingTitle">
+            <div class="section-heading">
+              <div>
+                <h2 id="rankingTitle">เมนูขายดี</h2>
+                <p id="rankingDescription">เรียงตามจำนวนชิ้นที่ขายได้</p>
+              </div>
+              <div class="metric-toggle" role="group" aria-label="เลือกเกณฑ์จัดอันดับ">
+                <button class="toggle-button is-active" type="button" data-metric="qty" aria-pressed="true">
+                  จำนวนชิ้น
+                </button>
+                <button class="toggle-button" type="button" data-metric="revenue" aria-pressed="false">
+                  ยอดขาย
+                </button>
+              </div>
+            </div>
+
+            <div id="categoryFilters" class="category-filters" role="group" aria-label="กรองตามหมวดหมู่"></div>
+            <ol id="rankingList" class="ranking-list"></ol>
+          </section>
+
+          <aside class="side-column">
+            <section class="trend-panel reveal" aria-labelledby="trendTitle">
+              <div class="section-heading compact">
+                <div>
+                  <h2 id="trendTitle">ยอดขายรายวัน</h2>
+                  <p>บาทต่อวัน</p>
+                </div>
+                <strong id="bestDayAmount"></strong>
+              </div>
+              <div id="dailyChart" class="daily-chart" role="img" aria-label="กราฟยอดขายรายวัน"></div>
+            </section>
+
+            <section class="mix-panel reveal" aria-labelledby="mixTitle">
+              <div class="section-heading compact">
+                <div>
+                  <h2 id="mixTitle">สัดส่วนหมวดสินค้า</h2>
+                  <p>คิดจากจำนวนชิ้น</p>
+                </div>
+              </div>
+              <div id="categoryMix" class="category-mix"></div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="operations-grid">
+          <article class="operation-card reveal">
+            <span class="operation-index">02</span>
+            <h2>ช่วงเช้าทำเงินมากที่สุด</h2>
+            <p id="morningInsight"></p>
+            <div class="operation-stat">
+              <strong id="morningShare"></strong>
+              <span>ของยอดขายทั้งสัปดาห์</span>
+            </div>
+          </article>
+          <article class="operation-card operation-card-accent reveal">
+            <span class="operation-index">03</span>
+            <h2>วางแผนสต็อกสุดสัปดาห์</h2>
+            <p id="weekendInsight"></p>
+            <div class="operation-stat">
+              <strong id="weekendShare"></strong>
+              <span>ของจำนวนชิ้นทั้งสัปดาห์</span>
+            </div>
+          </article>
+          <article class="operation-card reveal">
+            <span class="operation-index">04</span>
+            <h2>ลูกค้าหลักยังมาหน้าร้าน</h2>
+            <p id="channelInsight"></p>
+            <div class="operation-stat">
+              <strong id="walkinShare"></strong>
+              <span>ของยอดขายทั้งหมด</span>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section id="errorState" class="error-state" hidden>
+        <h2>ยังเปิดข้อมูลไม่ได้</h2>
+        <p>กรุณาเปิดหน้าเว็บผ่าน local server และตรวจว่าไฟล์ orders.csv อยู่ในโฟลเดอร์เดียวกัน</p>
+        <button id="retryButton" type="button">ลองอีกครั้ง</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>คำนวณจากออเดอร์สถานะ Completed เท่านั้น</p>
+      <p id="sourceNote">แหล่งข้อมูล: orders.csv</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

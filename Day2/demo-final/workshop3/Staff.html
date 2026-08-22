@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#1b1d1a">
+    <meta name="description" content="หน้าจัดการคิวออเดอร์ล่วงหน้าสำหรับพนักงาน">
+    <title>บ้านกาแฟ | คิวหน้าบาร์</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="staff-page">
+    <div class="page-grain" aria-hidden="true"></div>
+
+    <section id="pinGate" class="pin-gate" aria-labelledby="pinTitle">
+      <form id="pinForm" class="pin-panel">
+        <span class="brand-monogram large-mark" aria-hidden="true">บก</span>
+        <p>STAFF ACCESS</p>
+        <h1 id="pinTitle">เข้าสู่หน้าคิว</h1>
+        <label class="field">
+          <span>รหัสพนักงาน</span>
+          <input id="staffPin" name="pin" type="password" inputmode="numeric" autocomplete="current-password" maxlength="12" placeholder="กรอก PIN" required>
+        </label>
+        <p id="pinError" class="submit-error" role="alert" hidden></p>
+        <button id="pinSubmitButton" class="primary-button" type="submit"><span>เปิดหน้าคิว</span></button>
+        <a href="Index.html" class="back-link">กลับหน้าสั่งกาแฟ</a>
+      </form>
+    </section>
+
+    <div id="staffApp" hidden>
+      <header class="staff-header">
+        <a class="brand brand-on-dark" href="Staff.html" aria-label="รีเฟรชหน้าคิว">
+          <span class="brand-monogram" aria-hidden="true">บก</span>
+          <span class="brand-copy">
+            <strong id="brandName">บ้านกาแฟ</strong>
+            <small>ORDER BOARD</small>
+          </span>
+        </a>
+        <div class="staff-header-actions">
+          <span id="liveStatus" class="live-status"><i aria-hidden="true"></i> กำลังเชื่อมต่อ</span>
+          <button id="refreshButton" class="header-button" type="button">รีเฟรช</button>
+          <button id="logoutButton" class="header-button muted" type="button">ออก</button>
+        </div>
+      </header>
+
+      <main class="staff-main">
+        <section class="queue-intro" aria-labelledby="queueTitle">
+          <div>
+            <p class="eyebrow">คิวหน้าบาร์</p>
+            <h1 id="queueTitle">ออเดอร์ที่ต้องจัดการ</h1>
+            <p id="lastUpdated">กำลังอ่านข้อมูลจาก Google Sheets</p>
+          </div>
+          <div class="queue-metrics" aria-label="สรุปจำนวนออเดอร์">
+            <div><span>รอรับออเดอร์</span><strong id="pendingCount">0</strong></div>
+            <div><span>กำลังทำ</span><strong id="preparingCount">0</strong></div>
+            <div><span>พร้อมรับ</span><strong id="readyCount">0</strong></div>
+          </div>
+        </section>
+
+        <nav id="statusFilters" class="status-filters" aria-label="กรองสถานะออเดอร์">
+          <button class="is-active" type="button" data-status="active" aria-pressed="true">คิวปัจจุบัน <span id="activeBadge">0</span></button>
+          <button type="button" data-status="Pending" aria-pressed="false">เข้าใหม่</button>
+          <button type="button" data-status="Preparing" aria-pressed="false">กำลังทำ</button>
+          <button type="button" data-status="Ready" aria-pressed="false">พร้อมรับ</button>
+          <button type="button" data-status="Completed" aria-pressed="false">รับแล้ววันนี้</button>
+        </nav>
+
+        <section id="ordersLoading" class="orders-board" aria-label="กำลังโหลดออเดอร์">
+          <div class="skeleton order-skeleton"></div>
+          <div class="skeleton order-skeleton"></div>
+          <div class="skeleton order-skeleton"></div>
+        </section>
+        <section id="ordersBoard" class="orders-board" aria-live="polite" hidden></section>
+
+        <section id="emptyOrders" class="empty-orders" hidden>
+          <span>✓</span>
+          <h2>คิวนี้เรียบร้อยแล้ว</h2>
+          <p>ยังไม่มีออเดอร์ในสถานะที่เลือก</p>
+        </section>
+
+        <section id="staffError" class="staff-error" hidden>
+          <h2>อ่านคิวไม่สำเร็จ</h2>
+          <p id="staffErrorText">ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</p>
+          <button id="retryStaffButton" class="secondary-button" type="button">ลองใหม่</button>
+        </section>
+      </main>
+    </div>
+
+    <div id="staffToast" class="toast dark-toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="config.js"></script>
+    <script src="gas-bridge.js"></script>
+    <script src="staff.js"></script>
+  </body>
+</html>

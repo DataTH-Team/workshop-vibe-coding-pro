@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <meta
+      name="description"
+      content="Dashboard ยอดขายตามหมวดหมู่สำหรับเจ้าของร้าน Cafe จาก Google Sheets"
+    />
+    <title>Category Sales | Cafe Dashboard</title>
+    <link
+      rel="preload"
+      href="../demo1/assets/fonts/ibm-plex-sans-thai-400-thai.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="../demo1/assets/fonts/ibm-plex-sans-thai-600-thai.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="กลับไปด้านบน">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>
+          <strong>Cafe Ledger</strong>
+          <small>Owner dashboard</small>
+        </span>
+      </a>
+
+      <div class="topbar-actions">
+        <div class="connection" aria-live="polite">
+          <span id="connectionDot" class="connection-dot is-loading" aria-hidden="true"></span>
+          <span id="connectionText">กำลังอ่านข้อมูล</span>
+        </div>
+        <button id="refreshButton" class="refresh-button" type="button">อัปเดตข้อมูล</button>
+      </div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="intro" aria-labelledby="pageTitle">
+        <div class="intro-copy">
+          <p class="eyebrow">CATEGORY SALES</p>
+          <h1 id="pageTitle">ยอดขายตามหมวดหมู่</h1>
+          <p>ดูว่าหมวดไหนกำลังสร้างรายได้ให้ร้าน และแต่ละหมวดมีสัดส่วนเท่าไร</p>
+        </div>
+
+        <div class="source-card">
+          <span>แหล่งข้อมูล</span>
+          <strong>Google Sheets</strong>
+          <p>รวมเฉพาะรายการสถานะ Completed</p>
+        </div>
+      </section>
+
+      <section id="loadingState" class="loading-state" aria-label="กำลังโหลดข้อมูล">
+        <div class="skeleton skeleton-summary"></div>
+        <div class="skeleton skeleton-chart"></div>
+      </section>
+
+      <section id="dashboard" class="dashboard" hidden>
+        <section class="summary" aria-label="ภาพรวมยอดขายตามหมวดหมู่">
+          <article class="summary-primary">
+            <p>ยอดขายรวม</p>
+            <strong id="totalSales">-</strong>
+            <span>จากทุกหมวดหมู่</span>
+          </article>
+
+          <article class="summary-item">
+            <p>หมวดอันดับหนึ่ง</p>
+            <strong id="topCategory">-</strong>
+            <span id="topCategorySales">-</span>
+          </article>
+
+          <article class="summary-item">
+            <p>สัดส่วนอันดับหนึ่ง</p>
+            <strong id="topShare">-</strong>
+            <span id="categoryCount">-</span>
+          </article>
+        </section>
+
+        <section class="category-panel" aria-labelledby="categoryTitle">
+          <div class="panel-heading">
+            <div>
+              <h2 id="categoryTitle">โครงสร้างยอดขายของร้าน</h2>
+              <p>เรียงจากยอดขายสูงสุด พร้อมสัดส่วนเทียบกับยอดรวม</p>
+            </div>
+            <span id="updatedAt" class="updated-at">-</span>
+          </div>
+
+          <div
+            id="shareStrip"
+            class="share-strip"
+            role="img"
+            aria-label="สัดส่วนยอดขายทุกหมวดหมู่"
+          ></div>
+
+          <ol id="categoryList" class="category-list"></ol>
+        </section>
+
+        <aside class="insight" aria-labelledby="insightTitle">
+          <div class="insight-index">01</div>
+          <div>
+            <p>สิ่งที่ควรรู้</p>
+            <h2 id="insightTitle">-</h2>
+            <span id="insightText">-</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="emptyState" class="message-state" hidden>
+        <span>ไม่พบข้อมูล</span>
+        <h2>ยังไม่มียอดขายตามหมวดหมู่</h2>
+        <p>ตรวจสอบว่าชีตมีรายการสถานะ Completed และระบุ category แล้ว</p>
+        <button id="emptyRetryButton" type="button">ลองอีกครั้ง</button>
+      </section>
+
+      <section id="errorState" class="message-state error-state" hidden>
+        <span>เชื่อมต่อไม่สำเร็จ</span>
+        <h2>ยังอ่านข้อมูลจาก Google Sheets ไม่ได้</h2>
+        <p>ตรวจสอบอินเทอร์เน็ตและสิทธิ์การเข้าถึงชีต แล้วลองเชื่อมต่ออีกครั้ง</p>
+        <button id="retryButton" type="button">ลองเชื่อมต่อใหม่</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>ข้อมูลสรุปผ่าน Google Visualization API</p>
+      <a
+        href="https://docs.google.com/spreadsheets/d/1a0ElwjZdLOd0MJg7tx-iqQVXwZVdZPKG9WTfuQtJKxA/edit?gid=0#gid=0"
+        target="_blank"
+        rel="noreferrer"
+      >เปิด Google Sheets</a>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

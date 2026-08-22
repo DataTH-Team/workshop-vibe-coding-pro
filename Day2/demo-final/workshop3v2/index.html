@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123b31">
+  <meta name="description" content="สั่งกาแฟล่วงหน้า เลือกเวลารับ และติดตามสถานะออเดอร์">
+  <title>มะลิ คาเฟ่ | สั่งล่วงหน้า</title>
+  <link rel="preload" href="assets/cafe-hero.jpg" as="image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="customer-page">
+  <a class="skip-link" href="#menuSection">ข้ามไปเลือกเมนู</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="กลับหน้าเมนู">
+      <span class="brand-mark" aria-hidden="true">ม</span>
+      <span><strong data-cafe-name>มะลิ คาเฟ่</strong><small>PRE-ORDER</small></span>
+    </a>
+    <button class="text-button" id="openTracking" type="button">ติดตามออเดอร์</button>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <img src="assets/cafe-hero.jpg" alt="อเมริกาโน่เย็น มัทฉะลาเต้ และครัวซองต์บนเคาน์เตอร์สีเขียว" width="1536" height="1024">
+      <div class="hero-scrim"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">รับที่ร้าน ไม่ต้องรอคิว</p>
+        <h1 id="heroTitle">กาแฟแก้วโปรด<br>พร้อมเมื่อคุณมาถึง</h1>
+        <p>เลือกเมนูและเวลารับได้เลย เราจะเริ่มชงให้ตรงเวลา</p>
+      </div>
+    </section>
+
+    <aside class="setup-notice" id="setupNotice" hidden>
+      <strong>โหมดตัวอย่าง</strong>
+      <span>เมนูเปิดดูได้ แต่ต้องใส่ Web app URL ใน <code>config.js</code> ก่อนส่งออเดอร์</span>
+    </aside>
+
+    <section class="menu-section" id="menuSection" aria-labelledby="menuTitle">
+      <div class="section-heading">
+        <div>
+          <h2 id="menuTitle">วันนี้รับอะไรดี</h2>
+          <p>กดเพิ่มแล้วตรวจรายการในตะกร้า</p>
+        </div>
+        <span class="open-badge">เปิดรับออเดอร์</span>
+      </div>
+
+      <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="หมวดหมู่เมนู"></div>
+      <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+      <div class="menu-skeleton" id="menuSkeleton" aria-label="กำลังโหลดเมนู">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="state-panel" id="menuError" hidden>
+        <h3>โหลดเมนูไม่สำเร็จ</h3>
+        <p id="menuErrorMessage">กรุณาลองอีกครั้ง</p>
+        <button class="secondary-button" id="retryMenu" type="button">ลองใหม่</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="cart-dock" id="cartDock" hidden>
+    <button class="cart-button" id="openCart" type="button">
+      <span class="cart-count" id="cartCount">0</span>
+      <span class="cart-label"><strong>ดูตะกร้า</strong><small id="cartSummary">0 รายการ</small></span>
+      <strong id="cartTotal">฿0</strong>
+    </button>
+  </div>
+
+  <dialog class="sheet-dialog" id="cartDialog" aria-labelledby="cartTitle">
+    <form class="dialog-card order-form" id="orderForm" method="dialog" novalidate>
+      <div class="dialog-handle" aria-hidden="true"></div>
+      <header class="dialog-header">
+        <div><p>ออเดอร์ของคุณ</p><h2 id="cartTitle">ตรวจรายการ</h2></div>
+        <button class="close-button" type="button" data-close-dialog aria-label="ปิด">×</button>
+      </header>
+
+      <div class="cart-lines" id="cartLines"></div>
+      <div class="cart-total-row"><span>ยอดรวม</span><strong id="dialogTotal">฿0</strong></div>
+
+      <div class="form-grid">
+        <label class="field full-field">
+          <span>ชื่อสำหรับรับออเดอร์</span>
+          <input id="customerName" name="customerName" type="text" autocomplete="name" minlength="2" maxlength="60" required placeholder="เช่น คุณเมย์">
+          <small class="field-error" data-error-for="customerName"></small>
+        </label>
+        <label class="field">
+          <span>เบอร์โทร</span>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="0812345678">
+          <small class="field-error" data-error-for="phone"></small>
+        </label>
+        <label class="field">
+          <span>เวลารับ</span>
+          <select id="pickupTime" name="pickupTime" required></select>
+          <small class="field-error" data-error-for="pickupTime"></small>
+        </label>
+        <label class="field full-field">
+          <span>หมายเหตุ <small>ไม่บังคับ</small></span>
+          <textarea id="note" name="note" maxlength="200" rows="2" placeholder="เช่น หวานน้อย หรือแพ้อาหาร"></textarea>
+        </label>
+      </div>
+
+      <div class="form-alert" id="orderError" role="alert" hidden></div>
+      <button class="primary-button submit-order" id="submitOrder" type="submit">
+        <span>ยืนยันออเดอร์</span><strong id="submitTotal">฿0</strong>
+      </button>
+    </form>
+  </dialog>
+
+  <dialog class="sheet-dialog" id="trackingDialog" aria-labelledby="trackingTitle">
+    <form class="dialog-card" id="trackingForm" method="dialog" novalidate>
+      <div class="dialog-handle" aria-hidden="true"></div>
+      <header class="dialog-header">
+        <div><p>สถานะล่าสุด</p><h2 id="trackingTitle">ติดตามออเดอร์</h2></div>
+        <button class="close-button" type="button" data-close-dialog aria-label="ปิด">×</button>
+      </header>
+      <label class="field">
+        <span>หมายเลขออเดอร์</span>
+        <input id="trackingId" type="text" autocomplete="off" required placeholder="เช่น MC-260820-AB12CD">
+      </label>
+      <button class="primary-button" id="trackOrder" type="submit">ตรวจสอบสถานะ</button>
+      <div id="trackingResult" aria-live="polite"></div>
+    </form>
+  </dialog>
+
+  <dialog class="success-dialog" id="successDialog" aria-labelledby="successTitle">
+    <div class="success-card">
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <p>ร้านรับออเดอร์แล้ว</p>
+      <h2 id="successTitle">เจอกันที่ร้าน</h2>
+      <span>หมายเลขออเดอร์</span>
+      <button class="order-code" id="successOrderId" type="button" title="แตะเพื่อคัดลอก"></button>
+      <div class="success-meta"><span id="successPickup"></span><strong id="successTotal"></strong></div>
+      <button class="primary-button" id="closeSuccess" type="button">กลับหน้าเมนู</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

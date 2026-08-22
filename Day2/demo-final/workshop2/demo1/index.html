@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8f1f2d" />
+    <meta
+      name="description"
+      content="Dashboard วิเคราะห์ยอดขายร้านคาเฟ่จากข้อมูล Google Sheets"
+    />
+    <title>สรุปหน้าร้าน | Cafe Sales Dashboard</title>
+    <link
+      rel="preload"
+      href="assets/fonts/ibm-plex-sans-thai-400-thai.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/ibm-plex-sans-thai-600-thai.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="กลับไปด้านบนของ dashboard">
+        <span class="brand-mark" aria-hidden="true">ส</span>
+        <span>
+          <strong>สรุปหน้าร้าน</strong>
+          <small>Cafe analytics</small>
+        </span>
+      </a>
+      <div class="connection" aria-live="polite">
+        <span id="connectionMark" class="connection-mark is-loading" aria-hidden="true"></span>
+        <span id="connectionText">กำลังเชื่อมต่อข้อมูล</span>
+      </div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="page-intro" aria-labelledby="pageTitle">
+        <div>
+          <p class="eyebrow">ภาพรวมยอดขาย</p>
+          <h1 id="pageTitle">วันนี้ควรโฟกัสเมนูไหน?</h1>
+          <p class="intro-copy">ดูยอดขาย สินค้า และหมวดที่ทำผลงานดีที่สุดในช่วงเวลาที่คุณเลือก</p>
+        </div>
+
+        <form id="dateForm" class="date-filter" aria-label="เลือกช่วงเวลาของรายงาน">
+          <div class="date-filter-head">
+            <strong>ช่วงเวลารายงาน</strong>
+            <span id="rangeDuration">-</span>
+          </div>
+          <div class="date-inputs">
+            <label>
+              <span>วันที่เริ่มต้น</span>
+              <input id="startDate" name="startDate" type="date" required />
+            </label>
+            <span class="date-separator" aria-hidden="true">ถึง</span>
+            <label>
+              <span>วันที่สิ้นสุด</span>
+              <input id="endDate" name="endDate" type="date" required />
+            </label>
+            <button class="apply-button" type="submit">แสดงผล</button>
+          </div>
+          <div class="quick-ranges" role="group" aria-label="เลือกช่วงเวลาแบบด่วน">
+            <button type="button" data-days="7">7 วัน</button>
+            <button class="is-active" type="button" data-days="30">30 วัน</button>
+            <button type="button" data-days="all">ทั้งหมด</button>
+          </div>
+          <p id="dateError" class="field-error" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <section id="loadingState" class="loading-state" aria-label="กำลังโหลด dashboard">
+        <div class="skeleton skeleton-wide"></div>
+        <div class="skeleton-grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+        <div class="skeleton skeleton-chart"></div>
+      </section>
+
+      <section id="dashboard" hidden>
+        <section class="metrics" aria-label="ตัวเลขยอดขายสำคัญ">
+          <article class="metric metric-primary">
+            <p>ยอดขายสุทธิ</p>
+            <strong id="revenueValue">-</strong>
+            <div id="revenueChange" class="metric-change"></div>
+          </article>
+          <article class="metric">
+            <p>จำนวนออเดอร์</p>
+            <strong id="ordersValue">-</strong>
+            <div id="ordersChange" class="metric-change"></div>
+          </article>
+          <article class="metric">
+            <p>สินค้าที่ขายได้</p>
+            <strong id="unitsValue">-</strong>
+            <div id="unitsChange" class="metric-change"></div>
+          </article>
+          <article class="metric">
+            <p>ยอดเฉลี่ยต่อออเดอร์</p>
+            <strong id="averageValue">-</strong>
+            <div id="averageChange" class="metric-change"></div>
+          </article>
+        </section>
+
+        <section class="headline-insight" aria-labelledby="insightTitle">
+          <div>
+            <p>คำตอบสั้น ๆ จากข้อมูล</p>
+            <h2 id="insightTitle">-</h2>
+            <span id="insightDescription">-</span>
+          </div>
+          <div class="insight-figure">
+            <span>สร้างยอดขาย</span>
+            <strong id="topProductShare">-</strong>
+            <small>ของยอดขายในช่วงนี้</small>
+          </div>
+        </section>
+
+        <section class="analytics-grid">
+          <article class="panel trend-panel" aria-labelledby="trendTitle">
+            <div class="panel-heading">
+              <div>
+                <h2 id="trendTitle">แนวโน้มยอดขาย</h2>
+                <p id="trendSubtitle">ยอดขายรายวัน</p>
+              </div>
+              <div class="trend-summary">
+                <span>เฉลี่ยต่อวัน</span>
+                <strong id="dailyAverage">-</strong>
+                <small id="trendHint">ชี้หรือแตะกราฟเพื่อดูรายละเอียด</small>
+              </div>
+            </div>
+            <div
+              id="trendChart"
+              class="trend-chart"
+              role="group"
+              tabindex="0"
+              aria-label="กราฟแนวโน้มยอดขายรายวันแบบโต้ตอบ"
+              aria-describedby="trendHint"
+            ></div>
+          </article>
+
+          <article class="panel category-panel" aria-labelledby="categoryTitle">
+            <div class="panel-heading">
+              <div>
+                <h2 id="categoryTitle">หมวดขายดี</h2>
+                <p>สัดส่วนตามยอดขาย</p>
+              </div>
+            </div>
+            <div class="category-overview">
+              <div id="categoryDonut" class="category-donut" aria-hidden="true">
+                <div>
+                  <strong id="topCategoryShare">-</strong>
+                  <span>อันดับหนึ่ง</span>
+                </div>
+              </div>
+              <ol id="categoryList" class="category-list"></ol>
+            </div>
+          </article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel ranking-panel" aria-labelledby="rankingTitle">
+            <div class="panel-heading ranking-heading">
+              <div>
+                <h2 id="rankingTitle">สินค้าขายดี</h2>
+                <p id="rankingSubtitle">เรียงตามยอดขาย</p>
+              </div>
+              <div class="segmented" role="group" aria-label="เลือกเกณฑ์จัดอันดับสินค้า">
+                <button class="is-active" type="button" data-metric="revenue" aria-pressed="true">ยอดขาย</button>
+                <button type="button" data-metric="qty" aria-pressed="false">จำนวนชิ้น</button>
+              </div>
+            </div>
+            <div id="categoryFilters" class="category-filters" role="group" aria-label="กรองสินค้าตามหมวด"></div>
+            <ol id="productRanking" class="product-ranking"></ol>
+          </article>
+
+          <aside class="side-stack">
+            <article class="panel daypart-panel" aria-labelledby="daypartTitle">
+              <div class="panel-heading">
+                <div>
+                  <h2 id="daypartTitle">ช่วงเวลาขายดี</h2>
+                  <p>ยอดขายแยกตามช่วงเวลา</p>
+                </div>
+              </div>
+              <div id="daypartChart" class="daypart-chart"></div>
+            </article>
+
+            <article class="recommendation" aria-labelledby="recommendationTitle">
+              <span>แนะนำจากข้อมูล</span>
+              <h2 id="recommendationTitle">-</h2>
+              <p id="recommendationText">-</p>
+            </article>
+          </aside>
+        </section>
+
+        <section id="emptyState" class="empty-state" hidden>
+          <h2>ไม่พบยอดขายในช่วงนี้</h2>
+          <p>ลองเลือกช่วงวันที่อื่นที่อยู่ภายในข้อมูลที่มี</p>
+          <button id="showAllButton" type="button">ดูข้อมูลทั้งหมด</button>
+        </section>
+      </section>
+
+      <section id="errorState" class="error-state" hidden>
+        <span>เชื่อมต่อไม่สำเร็จ</span>
+        <h2>ยังเปิดข้อมูลจาก Google Sheets ไม่ได้</h2>
+        <p>ตรวจสอบอินเทอร์เน็ตและสิทธิ์เผยแพร่ของ Google Sheets แล้วลองอีกครั้ง</p>
+        <button id="retryButton" type="button">ลองเชื่อมต่อใหม่</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>คำนวณเฉพาะรายการสถานะ Completed</p>
+      <p id="sourceNote">แหล่งข้อมูล: Google Sheets</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

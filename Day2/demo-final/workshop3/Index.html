@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#f2f3ef">
+    <meta name="description" content="สั่งกาแฟล่วงหน้าและมารับที่ร้านได้ทันที">
+    <title>บ้านกาแฟ | สั่งล่วงหน้า</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="customer-page">
+    <div class="page-grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="Index.html" aria-label="กลับไปหน้าเมนู">
+        <span class="brand-monogram" aria-hidden="true">บก</span>
+        <span class="brand-copy">
+          <strong id="brandName">บ้านกาแฟ</strong>
+          <small>PRE-ORDER</small>
+        </span>
+      </a>
+      <button id="trackOrderButton" class="text-button" type="button" hidden>ติดตามออเดอร์</button>
+    </header>
+
+    <main>
+      <section class="customer-hero" aria-labelledby="pageTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">สั่งก่อน รับไว</p>
+          <h1 id="pageTitle">กาแฟพร้อม<br>เมื่อคุณมาถึง</h1>
+          <p>เลือกเมนู ระบุเวลารับ แล้วแวะมารับที่เคาน์เตอร์ได้เลย</p>
+        </div>
+        <aside class="pickup-card" aria-label="ข้อมูลการรับสินค้า">
+          <span class="pickup-label">เวลาทำโดยประมาณ</span>
+          <strong>10-15</strong>
+          <span>นาทีต่อออเดอร์</span>
+          <div class="open-state"><i aria-hidden="true"></i> เปิดรับออเดอร์</div>
+        </aside>
+      </section>
+
+      <section class="menu-section" aria-labelledby="menuTitle">
+        <div class="section-heading">
+          <h2 id="menuTitle">วันนี้รับอะไรดี?</h2>
+          <p>ทุกแก้วทำใหม่หลังยืนยันออเดอร์</p>
+        </div>
+
+        <div id="categoryFilters" class="category-filters" role="group" aria-label="กรองประเภทเมนู"></div>
+
+        <div id="menuLoading" class="menu-grid" aria-label="กำลังโหลดเมนู">
+          <div class="skeleton product-skeleton"></div>
+          <div class="skeleton product-skeleton"></div>
+          <div class="skeleton product-skeleton"></div>
+          <div class="skeleton product-skeleton"></div>
+        </div>
+        <div id="menuGrid" class="menu-grid" hidden></div>
+
+        <div id="menuError" class="inline-state error-state" hidden>
+          <strong>โหลดเมนูไม่สำเร็จ</strong>
+          <p>ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</p>
+          <button id="retryMenuButton" class="secondary-button" type="button">ลองใหม่</button>
+        </div>
+      </section>
+    </main>
+
+    <div id="cartDock" class="cart-dock" hidden>
+      <button id="openCartButton" class="cart-button" type="button">
+        <span class="cart-count" id="cartCount">0</span>
+        <span>ดูออเดอร์</span>
+        <strong id="cartTotal">฿0</strong>
+      </button>
+    </div>
+
+    <dialog id="cartDialog" class="sheet-dialog">
+      <div class="dialog-surface">
+        <div class="dialog-handle" aria-hidden="true"></div>
+        <header class="dialog-header">
+          <div>
+            <span>ออเดอร์ของคุณ</span>
+            <h2>ตรวจรายการก่อนสั่ง</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-dialog aria-label="ปิดหน้าต่าง">×</button>
+        </header>
+
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary">
+          <span>ยอดรวม</span>
+          <strong id="dialogTotal">฿0</strong>
+        </div>
+
+        <form id="checkoutForm" class="checkout-form" novalidate>
+          <label class="field full-field">
+            <span>ชื่อสำหรับเรียกรับออเดอร์</span>
+            <input id="customerName" name="customerName" type="text" autocomplete="name" maxlength="60" placeholder="เช่น แพร" required>
+            <small class="field-error" data-error-for="customerName"></small>
+          </label>
+
+          <label class="field">
+            <span>เบอร์โทร</span>
+            <input id="customerPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="08X XXX XXXX" required>
+            <small class="field-error" data-error-for="phone"></small>
+          </label>
+
+          <label class="field">
+            <span>เวลารับ</span>
+            <select id="pickupTime" name="pickupTime" required>
+              <option value="เร็วที่สุด">เร็วที่สุด</option>
+              <option value="">กำลังคำนวณเวลา</option>
+            </select>
+            <small class="field-error" data-error-for="pickupTime"></small>
+          </label>
+
+          <label class="field full-field">
+            <span>หมายเหตุถึงบาริสต้า <em>ไม่บังคับ</em></span>
+            <textarea id="orderNote" name="note" rows="2" maxlength="200" placeholder="เช่น ไม่หวาน, แยกน้ำแข็ง"></textarea>
+          </label>
+
+          <p id="submitError" class="submit-error" role="alert" hidden></p>
+          <button id="submitOrderButton" class="primary-button full-field" type="submit">
+            <span>ยืนยันออเดอร์</span>
+            <strong id="submitTotal">฿0</strong>
+          </button>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="statusDialog" class="sheet-dialog status-dialog">
+      <div class="dialog-surface">
+        <div class="dialog-handle" aria-hidden="true"></div>
+        <header class="dialog-header">
+          <div>
+            <span>สถานะออเดอร์</span>
+            <h2 id="statusOrderId">-</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-status aria-label="ปิดหน้าต่าง">×</button>
+        </header>
+
+        <div id="statusLoading" class="status-loading">
+          <div class="skeleton status-skeleton"></div>
+          <div class="skeleton status-skeleton short"></div>
+        </div>
+        <div id="statusContent" hidden>
+          <div class="status-banner">
+            <span id="statusLabel">รับออเดอร์แล้ว</span>
+            <strong id="statusMessage">ร้านกำลังตรวจสอบรายการ</strong>
+          </div>
+          <ol id="statusSteps" class="status-steps" aria-label="ขั้นตอนการเตรียมออเดอร์"></ol>
+          <div class="status-details">
+            <p><span>เวลารับ</span><strong id="statusPickup">-</strong></p>
+            <p><span>ยอดรวม</span><strong id="statusTotal">-</strong></p>
+          </div>
+          <p class="status-hint">หน้านี้อัปเดตอัตโนมัติทุก 20 วินาที</p>
+          <button id="orderAnotherButton" class="secondary-button wide-button" type="button">สั่งเพิ่ม</button>
+        </div>
+        <div id="statusError" class="inline-state error-state" hidden>
+          <strong>ยังอ่านสถานะไม่ได้</strong>
+          <p id="statusErrorText">กรุณาลองอีกครั้ง</p>
+          <button id="retryStatusButton" class="secondary-button" type="button">ลองใหม่</button>
+        </div>
+      </div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="config.js"></script>
+    <script src="gas-bridge.js"></script>
+    <script src="customer.js"></script>
+  </body>
+</html>
