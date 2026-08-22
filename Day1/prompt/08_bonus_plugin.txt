@@ -1,0 +1,16 @@
+--- BONUS · พิมพ์ /plugins (มี s) แล้วติดตั้ง frontend-design ก่อน ---
+
+Review UI/UX ของ VibeCode Travel ตอนนี้
+
+ดู:
+- Visual hierarchy
+- Spacing
+- Typography
+- Readability
+- Destination selection clarity
+- My Trip usability
+- Mobile layout
+
+ยังไม่ต้องแก้ Code
+สรุป 5 จุดที่ควรปรับมากที่สุด
+โดยรักษา Feature เดิมทั้งหมดไว้

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VibeCode Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Sarabun:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="shell nav-in">
+        <a class="brand" href="#top"><span class="brand-dot">V</span><span>VIBECODE TRAVEL</span></a>
+        <div class="nav-links"><a href="#explore">6 เมือง</a><a href="#mytrip">My Trip</a></div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <span class="spark s1">✦</span><span class="spark s2">✦</span><span class="spark s3">✦</span>
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">DAY 1 · VIBE CODING PRO</p>
+          <h1>ทริปหน้า<br /><span>ไปไหนดี?</span></h1>
+          <p class="hero-copy">
+            Travel Guide แบบเพื่อนแนะนำเพื่อน — ดูข้อมูลจริง แยกรีวิวส่วนตัว
+            และเก็บเมืองที่อยากไปไว้ใน My Trip ของเรา
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#explore">เริ่มสำรวจ 6 เมือง</a
+            ><a class="btn btn-soft" href="#mytrip">ดู My Trip</a>
+          </div>
+          <div class="mini-proof">
+            <span>✓ FACT แยกจาก REVIEW</span><span>✓ กดการ์ดแล้วเด้ง Modal</span
+            ><span>✓ Save ทริปที่อยากไป</span>
+          </div>
+        </div>
+        <aside class="passport-card">
+          <div class="passport-head"><span>MY TRIP</span><b>✦</b></div>
+          <div class="passport-stats">
+            <div><strong id="tripCount">0</strong><span>SAVED</span></div>
+          </div>
+          <div class="stamp-grid" id="passportStamps"></div>
+          <p class="passport-note">กด “＋ My Trip” บนเมืองที่อยากไป แล้วรายการจะมาโผล่ตรงนี้</p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section shell" id="explore">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">EXPLORE</p>
+            <h2>6 เมือง · 6 ฟีล</h2>
+          </div>
+          <p>เลือกการ์ดเพื่อเปิดรายละเอียด แล้วบอกได้เลยว่าเคยไปหรืออยากเก็บไว้ทริปหน้า</p>
+        </div>
+        <div class="cards" id="destinationList"></div>
+      </section>
+
+      <!-- แผงรายละเอียดเป็น Modal — กดการ์ดแล้วต้อง "เด้งขึ้นมา" ไม่ใช่เลื่อนลงไปหา -->
+      <div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop" data-close="1"></div>
+        <div class="modal-panel" role="document">
+          <button class="modal-close" id="modalClose" aria-label="ปิด">✕</button>
+          <div id="detail"></div>
+        </div>
+      </div>
+
+      <section class="section shell" id="mytrip">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">MY TRIP</p>
+            <h2>เมืองที่อยากไปต่อ</h2>
+          </div>
+          <p>Save ไว้ก่อน ยังไม่ใช่ระบบ Booking — เป็นแค่ shortlist ของเรา</p>
+        </div>
+        <div class="trip-grid" id="tripList"></div>
+        <div class="empty" id="tripEmpty">
+          ยังไม่มีเมืองใน My Trip · กด “เก็บไว้ My Trip” จากเมืองที่สนใจได้เลย
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-in">
+        <b>VibeCode Travel</b><span>Vibe Coding Pro Day 1</span>
+      </div>
+    </footer>
+    <script src="destinations-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

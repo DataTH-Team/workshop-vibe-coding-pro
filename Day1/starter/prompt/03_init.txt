@@ -1,0 +1,15 @@
+/init
+
+--- หลังจากมันเขียน CLAUDE.md เสร็จ ให้เปิดไฟล์แล้วตัดให้เหลือประมาณนี้ ---
+
+# Project Rules
+- Use HTML, CSS and vanilla JavaScript only.
+- Do not add frameworks, packages, backend, database or APIs.
+- Treat SPEC.md as the source of truth.
+- Follow DESIGN.md for visual direction.
+- Keep destination data in destinations-data.js.
+- Never invent facts in the FACT box.
+- Detail opens as a modal, not a scroll target.
+- Preserve existing working features when changing the app.
+- Do not use fetch() or <script type="module">.
+- The site must work by opening index.html directly.

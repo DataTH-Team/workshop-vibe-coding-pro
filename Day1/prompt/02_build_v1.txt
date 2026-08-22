@@ -1,0 +1,23 @@
+อ่าน @SPEC.md และ @DESIGN.md
+ยึดทิศทางหน้าตาจาก DESIGN.md เป็นหลัก
+(ถ้ามีไฟล์ design-reference.png ในโฟลเดอร์ ให้ดูประกอบด้วย ไม่มีก็ไม่ต้องถาม)
+
+สร้าง VibeCode Travel V1
+ตาม Requirement ใน SPEC.md
+
+ใช้ HTML + CSS + Vanilla JavaScript เท่านั้น
+สร้างไฟล์:
+- index.html
+- style.css
+- destinations-data.js
+- script.js
+
+ใช้รูปที่มีอยู่แล้วใน assets/
+ต้องเปิด index.html ด้วย file:// แล้วใช้งานได้
+และอย่าเพิ่ม Feature ที่ไม่มีใน SPEC
+
+ก่อนเริ่ม สรุปสั้น ๆ ว่าแต่ละไฟล์รับผิดชอบอะไร
+แล้วค่อยลงมือสร้าง
+
+เมื่อเสร็จ ให้หยุดและบอกว่า
+ฉันต้องลองอะไรใน Browser บ้าง
