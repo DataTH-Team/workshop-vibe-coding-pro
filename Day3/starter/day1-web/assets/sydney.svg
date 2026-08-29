@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2FB39E"/><stop offset="1" stop-color="#42145E"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="1200" height="760" rx="48" fill="url(#g)"/>
+  <circle cx="980" cy="150" r="105" fill="#FFC94A" opacity=".75"/>
+  <circle cx="110" cy="620" r="150" fill="#fff" opacity=".13"/>
+  <g filter="url(#s)" transform="translate(700 215)" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><path d="M80 330h350M120 320c30-130 85-170 135-170 0 90-30 155-90 180M240 320c25-105 75-140 120-140 0 75-24 125-70 150M70 360c95-38 250-38 360 0"/></g>
+  <text x="80" y="125" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">VIBECODE</text>
+  <text x="80" y="500" fill="#fff" font-family="Arial, sans-serif" font-size="92" font-weight="800">Sydney</text>
+  <text x="84" y="555" fill="#fff" font-family="Arial, sans-serif" font-size="30" opacity=".86">Australia</text>
+  <rect x="80" y="610" width="210" height="54" rx="27" fill="#fff" opacity=".95"/>
+  <text x="185" y="645" text-anchor="middle" fill="#42145E" font-family="Arial, sans-serif" font-size="22" font-weight="800">TRAVEL CARD</text>
+</svg>

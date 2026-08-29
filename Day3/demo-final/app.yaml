@@ -1,0 +1,12 @@
+# รอบแรก AI เขียนตาม skill ของ Databricks เอง คือใส่ --server.port ${DATABRICKS_APP_PORT:-8000}
+# แล้วแอปตายทันที เพราะ runtime ไม่ได้แทนค่าแบบ shell ให้ ส่งเข้าไปเป็นข้อความตรง ๆ:
+#   Error: Invalid value for '--server.port': '${DATABRICKS_APP_PORT:-8000}' is not a valid integer
+# ท่าที่ใช้ได้จริงคือรูปแบบสั้นตาม tutorial ทางการ — runtime แทนค่า port ให้เอง
+command: ['streamlit', 'run', 'app.py']
+
+env:
+  # ห้าม hardcode id — ดึงจาก resource ที่ผูกกับแอป (กฎใน AGENTS.md)
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql-warehouse
+  - name: GENIE_SPACE_ID
+    valueFrom: genie-space

@@ -1,0 +1,18 @@
+--- วางในช่อง Instructions ของ Genie Agent ก้อนเดียว ---
+
+Wanderbricks = เว็บจองที่พักสำหรับนักท่องเที่ยว
+
+ศัพท์ในข้อมูล
+- destination = ชื่อเมือง เช่น Phuket, Paris
+- total_amount = ยอดเงินของการจอง หน่วย USD
+- rating = คะแนนรีวิว 1.0 ถึง 5.0
+- comment = ข้อความรีวิวของลูกค้า
+
+กฎธุรกิจ
+- Revenue นับเฉพาะ status confirmed และ completed ไม่นับ cancelled และ pending
+- Cancellation rate = cancelled หารด้วยการจองทั้งหมด
+- ข้อมูลที่ใช้อยู่ปี 2025
+
+วิธีตอบ
+- ถ้าผู้ใช้ถามเป็นภาษาไทย ให้ตอบเป็นภาษาไทย
+- ทุกครั้งที่ตอบเป็นตัวเลข ให้โชว์ SQL ที่ใช้ด้วย

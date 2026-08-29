@@ -1,0 +1,94 @@
+ใช้ตอนไหน  Workshop 2 (Data App) ก้อน A B C
+ทำใน  Genie Code
+============================================================
+
+--- ขั้นแรก ยังไม่ใช่ prompt ---
+อัปไฟล์จาก starter ขึ้น Workspace โฟลเดอร์ wanderbricks-app ทั้ง 6 ไฟล์
+day1-web/index.html  day1-web/style.css
+SPEC.md  AGENTS.md  DESIGN.md  assets.py  catto.png
+โฟลเดอร์ day1-web คือเว็บ VibeCode Travel ที่ทำไว้วันแรก ใช้เป็นโครงหน้าตา
+อัปแค่ index.html กับ style.css พอ ไฟล์ js ไม่ต้อง Streamlit ไม่ได้ใช้
+และต้องผูก resource ตาม prompt/08 ให้เสร็จก่อน
+
+
+--- ก้อน A · ทำเว็บทั้งเว็บแล้ว deploy ---
+
+อ่าน index.html กับ style.css ในโฟลเดอร์นี้ก่อน
+นั่นคือเว็บ VibeCode Travel ที่ฉันทำไว้วันแรก
+แล้วอ่าน SPEC.md AGENTS.md และ DESIGN.md ต่อ
+โจทย์อยู่ใน SPEC กฎธุรกิจอยู่ใน AGENTS หน้าตาอยู่ใน DESIGN
+
+ทำเว็บนี้ให้เป็น Databricks App ด้วย Streamlit ในโฟลเดอร์ wanderbricks-app
+เอาโครงหน้าตาจาก index.html และสีกับฟอนต์จาก style.css มาทั้งหมด
+ห้ามออกแบบใหม่ ห้ามใช้ธีมเริ่มต้นของ Streamlit
+วาง HTML ผ่าน st.markdown แบบ unsafe_allow_html
+
+ของเดิมในเว็บเป็นตัวเลขที่พิมพ์ไว้เอง
+ให้เปลี่ยนทุกตัวเลขและทุกการ์ดเมือง มาดึงจาก samples.wanderbricks ของจริง
+รูปเมืองใช้ CITY_IMG จาก assets.py ห้ามเดา URL เอง
+คำโปรยใช้ blurb_th จาก assets.py
+
+กดการ์ดเมืองแล้วไปหน้าแดชบอร์ดที่ ?view=analytics&city=ชื่อเมือง
+ลิงก์ทุกอันต้องใส่ target="_self" และ encode ค่าใน query param ด้วย quote
+ไม่งั้นกดการ์ดแล้วไม่ไปไหน
+
+หน้าแดชบอร์ดมี รายได้รวมปี 2025 กราฟเส้นรายเดือน กราฟแท่ง 10 เมือง
+และปุ่มกลับหน้าแรก
+
+ใช้ตารางเหล่านี้ บอกชื่อเต็มไปเลย อย่าค้นเอง
+samples.wanderbricks.bookings
+samples.wanderbricks.properties
+samples.wanderbricks.destinations
+
+สร้าง 4 ไฟล์ app.yaml requirements.txt app.py และ .streamlit/config.toml
+ใช้ฟังก์ชัน run_query กับ app.yaml ตามที่เขียนไว้ใน AGENTS.md ทั้งก้อน
+ห้ามเขียนวิธีต่อ warehouse เอง และห้ามเดาชื่อคอลัมน์
+
+ก่อนสร้าง สรุปให้ฟังก่อนว่าจะทำอะไรบ้าง มีไฟล์อะไร
+แล้วรอฉันอนุมัติ อย่าเพิ่งลงมือ
+
+ถ้าติด error ให้บอกฉัน อย่าลบไฟล์ที่สร้างไปแล้ว
+
+
+--- ก้อน B · เพิ่มแท็บ Chat ---
+
+เพิ่มแท็บที่สองชื่อ Chat ในไฟล์ app.py เดิม อย่าเขียนไฟล์ใหม่ทั้งหมด
+
+ในแท็บ Chat
+- ใช้ st.chat_input ให้พิมพ์ถามเป็นภาษาไทยได้
+- ส่งคำถามไปที่ Genie Agent ผ่าน SDK
+- เก็บประวัติแชทใน st.session_state
+- วาดประวัติก่อนช่องพิมพ์ แล้ว st.rerun() หลังได้คำตอบ
+  ไม่งั้นข้อความใหม่จะไปโผล่ใต้ช่องพิมพ์
+
+ใช้ฟังก์ชัน ask_genie ตามที่เขียนไว้ใน AGENTS.md ทั้งก้อน ห้ามเขียนเอง
+
+อ่าน genie space id จาก env GENIE_SPACE_ID ห้าม hardcode
+แก้เฉพาะส่วนที่เกี่ยวกับแท็บใหม่ ส่วน Charts เดิมอย่าแตะ
+
+
+--- ก้อน C · แท็บ AI Insights (ของเพิ่ม) ---
+
+เพิ่มแท็บที่สามชื่อ AI Insights ในไฟล์ app.py เดิม
+
+ในแท็บนี้
+- ให้ผู้ใช้เลือกจำนวนรีวิว 10 / 20 / 40
+- คิวรีเดียวดึง comment พร้อม ai_analyze_sentiment(comment)
+  จาก samples.wanderbricks.reviews โดย LIMIT ใน subquery ก่อนเรียกโมเดล
+- แสดงสัดส่วนผลเป็นกราฟโดนัท
+- แสดงรีวิวจริงคู่กับผลที่ AI ให้ อย่างน้อย 10 รายการ
+- ป้ายผลเป็นภาษาไทย เชิงบวก / เชิงลบ / กลาง ๆ / มีทั้งบวกและลบ
+
+อย่าเรียกโมเดลกับทั้งตาราง จะกินโควตา
+แก้เฉพาะส่วนแท็บใหม่ แท็บเดิมอย่าแตะ
+
+
+--- follow-up วางทีละบรรทัดถ้าเจออาการ ---
+
+CSS โผล่เป็นข้อความบนหน้าเว็บ ทำ style ให้เป็นบรรทัดเดียว
+การ์ดกดไม่ได้ ลูกศรกับการ์ดต้องเป็น a href จริง ไม่ใช่ span
+ปุ่มยังเป็นสีเทาของ Streamlit ทาสีตามที่ DESIGN.md เขียนไว้
+สร้าง .streamlit/config.toml ปักธีมสว่างตามที่ DESIGN.md เขียนไว้
+รูปเมืองผิด ให้ใช้ CITY_IMG จาก assets.py เท่านั้น ห้ามหารูปเอง
+หน้าตาไม่เหมือน index.html ให้กลับไปดู index.html แล้วทำตามโครงนั้น
+การ์ดกดแล้วไม่ไปไหน ทุก a href ต้องใส่ target="_self"
