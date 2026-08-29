@@ -1,0 +1,11 @@
+# ปักธีมสว่าง ไม่ให้ผู้ชมที่ตั้งเครื่องเป็นธีมมืดเห็นตัวหนังสือขาวจมพื้น
+[theme]
+base = "light"
+primaryColor = "#42145E"
+backgroundColor = "#FDFCFB"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1F1B2E"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"

@@ -1,0 +1,26 @@
+ขั้นนี้ห้ามข้าม — App มีตัวตนของมันเอง สิทธิ์ของเราไม่ติดไปให้อัตโนมัติ
+
+1 · Apps → กดที่ชื่อแอป → Edit
+2 · Add resource → SQL warehouse
+      เลือก Serverless Starter Warehouse · Permission: Can use
+      Resource key: sql-warehouse
+3 · Add resource → Genie space
+      เลือกชื่อ Wanderbricks Analytics ที่สร้างไว้ · Permission: Can run
+      Resource key: genie-space
+
+      ** ถ้าดรอปดาวน์ว่างเปล่า แปลว่ายังไม่ได้สร้าง Genie Agent **
+      ทางเลือก 1  กลับไปสร้างก่อน ใช้ prompt/04 วาง Instructions แล้ว Save ก็พอ
+      ทางเลือก 2  ผูกแค่ SQL warehouse ไปก่อน
+                  แท็บ Charts ยังทำงานได้ปกติ เสียแค่แท็บ Chat ซึ่งเป็นของเพิ่ม
+                  ค่อยกลับมาผูกทีหลังได้ ไม่ต้องสร้างแอปใหม่
+4 · ให้สิทธิ์ Data ที่ App query
+      USE CATALOG · USE SCHEMA · SELECT ให้ service principal ของแอป
+5 · app.yaml อ้าง resource key ผ่าน valueFrom ไม่ใช่พิมพ์ id ลงไปตรง ๆ
+
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql-warehouse
+  - name: GENIE_SPACE_ID
+    valueFrom: genie-space
+
+ข้ามขั้นนี้ = แอปขึ้นได้แต่ query ไม่ออก · เจอบ่อยที่สุดใน Workshop นี้

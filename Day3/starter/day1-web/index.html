@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VibeCode Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Sarabun:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="shell nav-in">
+        <a class="brand" href="#top"><span class="brand-dot">V</span><span>VIBECODE TRAVEL</span></a>
+        <div class="nav-links">
+          <a href="#game">Find My Next Trip</a><a href="#explore">6 เมือง</a
+          ><a href="#mytrip">My Trip</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <span class="spark s1">✦</span><span class="spark s2">✦</span><span class="spark s3">✦</span>
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">DAY 1 · VIBE CODING PRO</p>
+          <h1>ทริปหน้า<br /><span>ไปไหนดี?</span></h1>
+          <p class="hero-copy">
+            Travel Guide แบบเพื่อนแนะนำเพื่อน — ดูข้อมูลจริง แยกรีวิวส่วนตัว
+            และเก็บเมืองที่อยากไปไว้ใน Trip Passport ของเรา
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#game">เล่น Find My Next Trip ✦</a
+            ><a class="btn btn-soft" href="#explore">ดู 6 เมือง</a>
+          </div>
+          <div class="mini-proof">
+            <span>✓ FACT แยกจาก REVIEW</span><span>✓ Mark ว่าไปมาแล้วได้</span
+            ><span>✓ Save ทริปที่อยากไป</span>
+          </div>
+        </div>
+        <aside class="passport-card">
+          <div class="passport-head"><span>MY TRAVEL PASSPORT</span><b>✦</b></div>
+          <div class="passport-stats">
+            <div><strong id="visitedCount">0</strong><span>VISITED</span></div>
+            <div><strong id="savedCount">0</strong><span>MY TRIP</span></div>
+          </div>
+          <div class="stamp-grid" id="passportStamps"></div>
+          <p class="passport-note">กด “ไปมาแล้ว” บนเมืองที่เคยไป แล้ว Passport จะค่อย ๆ เต็ม</p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section shell" id="game">
+        <div class="game-shell">
+          <div class="game-intro">
+            <p class="eyebrow">FIND MY NEXT TRIP · MINI GAME</p>
+            <h2>ตอบไม่กี่ข้อ แล้วหาเมืองที่น่าจะ <span>ใช่สำหรับทริปนี้</span></h2>
+            <p>
+              เลือก Travel DNA ของรอบนี้ 3 ข้อ — เมืองที่กด “ไปมาแล้ว” ไว้
+              จะถูกตัดออกให้อัตโนมัติ ถ้ายังมีเมืองอื่นเหลืออยู่
+            </p>
+            <div class="game-progress"><span id="gameProgressBar"></span></div>
+            <small id="gameProgressText">STEP 1 / 3</small>
+            <p class="game-visited-note">ตอนนี้ Passport ของคุณ: <b id="gameVisitedNote">0</b> เมือง</p>
+          </div>
+          <div class="game-card">
+            <div class="game-step" data-step="0">
+              <div class="q-number">01</div>
+              <h3>ทริปนี้อยากได้อะไรที่สุด?</h3>
+              <div class="option-grid" data-key="interest">
+                <button data-value="Food">🍜 Food</button
+                ><button data-value="Culture">🏛 Culture</button
+                ><button data-value="Shopping">🛍 Shopping</button
+                ><button data-value="Nature">🌿 Nature</button>
+              </div>
+            </div>
+            <div class="game-step is-hidden" data-step="1">
+              <div class="q-number">02</div>
+              <h3>อยากเที่ยวจังหวะแบบไหน?</h3>
+              <div class="option-grid" data-key="pace">
+                <button data-value="Fast & Busy">⚡ Fast & Busy</button
+                ><button data-value="Balanced">✦ Balanced</button
+                ><button data-value="Slow & Relaxed">☁ Slow & Relaxed</button>
+              </div>
+            </div>
+            <div class="game-step is-hidden" data-step="2">
+              <div class="q-number">03</div>
+              <h3>มีเวลาประมาณไหน?</h3>
+              <div class="option-grid" data-key="length">
+                <button data-value="Weekend">🧳 Weekend</button
+                ><button data-value="4–6 Days">📅 4–6 Days</button
+                ><button data-value="Flexible">✨ Flexible</button>
+              </div>
+            </div>
+            <div class="game-result is-hidden" id="gameResult"></div>
+            <div class="game-controls">
+              <button class="btn btn-soft" id="gameBack" disabled>← กลับ</button
+              ><button class="btn btn-primary" id="gameNext">ต่อไป →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell map-section" id="mapSection">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">WORLD MAP</p>
+            <h2>6 เมืองอยู่ตรงไหนของโลก</h2>
+          </div>
+          <p>ชี้ที่หมุดเพื่อดูชื่อเมือง · กดหมุดเพื่อเปิดรายละเอียด</p>
+        </div>
+        <div class="map-wrap">
+          <img class="map-img" src="assets/world-map.svg" alt="แผนที่โลก" />
+          <div class="pins" id="pinLayer"></div>
+          <div class="map-tip" id="mapTip" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="section shell" id="explore">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">EXPLORE</p>
+            <h2>6 เมือง · 6 ฟีล</h2>
+          </div>
+          <p>เลือกการ์ดเพื่อเปิดรายละเอียด แล้วบอกได้เลยว่าเคยไปหรืออยากเก็บไว้ทริปหน้า</p>
+        </div>
+        <div class="cards" id="destinationList"></div>
+      </section>
+
+      <!-- แผงรายละเอียดเป็น Modal — กดการ์ดแล้วต้อง "เด้งขึ้นมา" ไม่ใช่เลื่อนลงไปหา -->
+      <div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop" data-close="1"></div>
+        <div class="modal-panel" role="document">
+          <button class="modal-close" id="modalClose" aria-label="ปิด">✕</button>
+          <div id="detail"></div>
+        </div>
+      </div>
+
+      <section class="section shell" id="mytrip">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">MY TRIP</p>
+            <h2>เมืองที่อยากไปต่อ</h2>
+          </div>
+          <p>Save ไว้ก่อน ยังไม่ใช่ระบบ Booking — เป็นแค่ shortlist ของเรา</p>
+        </div>
+        <div class="trip-grid" id="tripList"></div>
+        <div class="empty" id="tripEmpty">
+          ยังไม่มีเมืองใน My Trip · กด “เก็บไว้ My Trip” จากเมืองที่สนใจได้เลย
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-in">
+        <b>VibeCode Travel</b><span>Vibe Coding Pro Day 1</span>
+      </div>
+    </footer>
+    <script src="destinations-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

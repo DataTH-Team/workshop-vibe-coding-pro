@@ -1,0 +1,16 @@
+--- ทำใน Databricks · Dashboards → Create dashboard → แท็บ Data ---
+
+เขียน SQL ให้หน่อย ใช้ samples.wanderbricks
+
+ต้องได้คอลัมน์: booking_id, destination, country,
+check_in, status, total_amount, rating
+
+เงื่อนไข:
+- join bookings + properties + destinations
+- เอา rating มาจาก reviews ด้วย
+- 1 การจองมีรีวิวได้หลายอัน ต้องย่อ reviews ให้เหลือ 1 แถวต่อ booking ก่อน join
+- กรอง check_in เฉพาะปี 2025 (>= DATE 2025-01-01 และ < DATE 2026-01-01)
+  ปิดช่วงทั้งหัวและท้าย ไม่งั้นถ้ามีข้อมูลปี 2026 เพิ่มเข้ามา ตัวเลขจะไม่ใช่ปี 2025
+- ยังไม่ต้องกรอง status ในชั้นนี้ เดี๋ยวคิดสัดส่วนยกเลิกต่อ
+
+เขียนเสร็จแล้วบอกด้วยว่าถ้าไม่ย่อ reviews ก่อน จะเกิดอะไรขึ้น

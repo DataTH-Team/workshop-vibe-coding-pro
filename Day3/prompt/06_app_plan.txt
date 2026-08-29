@@ -1,0 +1,15 @@
+--- สลับเป็นโหมด Plan ก่อน ---
+
+อ่าน @SPEC.md @AGENTS.md @DESIGN.md
+
+เราจะทำ Databricks App (Streamlit) 2 แท็บหลัก + 1 แท็บเสริม
+A · Charts — ตัวเลขสรุป + กราฟรายเดือน + 10 เมือง
+B · Chat — ถามภาษาไทยผ่าน Genie Agent
+C · AI Insights (เสริม) — ai_analyze_sentiment อ่านรีวิว
+
+ยังไม่ต้องแก้ไฟล์
+ช่วยวาง Plan สั้น ๆ ว่า:
+1. ต้องสร้างไฟล์อะไรบ้าง
+2. จะต่อ Databricks ยังไง (ห้าม hardcode token)
+3. กฎธุรกิจ 3 ข้อจะอยู่ตรงไหนของโค้ด
+4. หลังทำเสร็จต้องตรวจอะไร

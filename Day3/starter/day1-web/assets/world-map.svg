@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" class="world" role="img" aria-label="แผนที่โลก">
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3B1258"/><stop offset="1" stop-color="#2A0D40"/>
+    </linearGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6A3690"/><stop offset="1" stop-color="#552A78"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="520" rx="26" fill="url(#ocean)"/>
+  <g fill="url(#land)" stroke="#7B45A2" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M150 70 L300 62 L330 108 L305 150 L268 156 L250 200 L214 236 L196 200 L176 150 L150 118 Z"/>
+    <path d="M250 210 L286 214 L300 250 L330 296 L322 360 L296 420 L272 452 L262 404 L272 340 L252 292 L236 250 Z"/>
+    <path d="M470 78 L556 70 L570 104 L546 138 L500 146 L474 126 Z"/>
+    <path d="M478 160 L568 152 L590 196 L578 268 L536 344 L502 372 L482 322 L466 250 L466 196 Z"/>
+    <path d="M576 66 L800 58 L880 96 L906 140 L862 168 L804 176 L742 168 L690 190 L640 176 L600 140 L580 104 Z"/>
+    <path d="M760 200 L800 196 L818 232 L800 266 L768 262 L752 232 Z"/>
+    <path d="M866 322 L950 316 L966 360 L936 396 L884 392 L858 358 Z"/>
+  </g>
+  <g fill="none" stroke="#F5821F" stroke-width="2" stroke-dasharray="5 10" stroke-linecap="round" opacity=".45">
+    <path d="M294 142 C 420 100, 470 110, 506 119"/>
+    <path d="M506 119 C 640 130, 720 170, 779 220"/>
+    <path d="M779 220 C 830 250, 890 300, 920 358"/>
+  </g>
+</svg>
