@@ -31,7 +31,7 @@ GRANT SELECT ON FUTURE TABLES IN SCHEMA cafe_db.sales TO ROLE cafe_readonly;
 GRANT SELECT ON ALL VIEWS IN SCHEMA cafe_db.sales TO ROLE cafe_readonly;
 GRANT SELECT ON FUTURE VIEWS IN SCHEMA cafe_db.sales TO ROLE cafe_readonly;
 
--- ให้ตัวเราเอง (ACCOUNTADMIN) สลับไปใช้ role นี้ได้ เพื่อพิสูจน์ในขั้นตอนที่ 7 ว่ามันเขียนข้อมูลไม่ได้จริง
+-- ให้ตัวเราเอง (ACCOUNTADMIN) สลับไปใช้ role นี้ได้ เพื่อพิสูจน์ในขั้นตอน 7 ว่ามันเขียนข้อมูลไม่ได้จริง
 GRANT ROLE cafe_readonly TO ROLE ACCOUNTADMIN;
 
 -- 4) สร้าง User สำหรับ AI
@@ -69,13 +69,10 @@ ALTER USER cafe_bot
 -- ALTER USER cafe_bot REMOVE PROGRAMMATIC ACCESS TOKEN cafe_workshop_token;
 
 
--- ============================================================================
--- (ทดสอบ) คำสั่งเพื่อพิสูจน์ว่า role นี้อ่านได้อย่างเดียวจริง
+-- 7) ทดสอบว่า role นี้อ่านได้อย่างเดียวจริง
 -- *ต้องโหลด Day4-orders-20-branches.csv เข้า cafe_db.sales.ORDERS ก่อน
---
 --    SELECT ต้องสำเร็จ (อ่านได้)
 --    INSERT และ DROP ต้อง ERROR (เขียนไม่ได้)
--- ============================================================================
 
 USE ROLE cafe_readonly;
 USE WAREHOUSE cafe_wh;
