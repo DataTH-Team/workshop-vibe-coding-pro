@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta
+      name="description"
+      content="ผู้ช่วยวิเคราะห์ยอดขายร้านกาแฟจากข้อมูล Snowflake"
+    />
+    <title>Cafe Ops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Noto+Serif+Thai:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="workspace">
+      <aside class="context-panel" aria-label="ข้อมูลการเชื่อมต่อ">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">C</div>
+          <div>
+            <strong>Cafe Ops</strong>
+            <span>Daily sales companion</span>
+          </div>
+        </div>
+
+        <section class="source-section">
+          <p class="section-label">แหล่งข้อมูล</p>
+          <div class="source-name">
+            <div class="database-mark" aria-hidden="true">SF</div>
+            <div>
+              <strong>Snowflake</strong>
+              <span>CAFE_DB.SALES.ORDERS</span>
+            </div>
+          </div>
+          <p id="connectionDetail" class="connection-detail">กำลังตรวจการเชื่อมต่อ</p>
+        </section>
+
+        <section class="data-summary" aria-label="ขอบเขตข้อมูล">
+          <div><strong>20</strong><span>สาขา</span></div>
+          <div><strong>ประมาณ 50K</strong><span>ออเดอร์</span></div>
+        </section>
+
+        <section class="pipeline-section">
+          <p class="section-label">คำถามเดินทางอย่างไร</p>
+          <ol id="pipeline" class="pipeline" aria-label="สถานะการประมวลผลคำถาม">
+            <li data-step="frontend"><span>หน้าแชต</span><small>ส่งคำถาม</small></li>
+            <li data-step="backend"><span>Backend</span><small>ให้ Gemini วางแผน query</small></li>
+            <li data-step="sql-api"><span>SQL API</span><small>ส่ง read-only SQL ผ่าน HTTPS</small></li>
+            <li data-step="snowflake"><span>Snowflake</span><small>ประมวลผลและส่งผลกลับ</small></li>
+          </ol>
+        </section>
+
+        <p class="freshness-note">ทุกคำถามรัน query ใหม่ ไม่มีการโหลดทั้งตารางเข้า Gemini</p>
+      </aside>
+
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <h1>ถามข้อมูลยอดขาย</h1>
+            <p id="status" class="status" data-state="checking">กำลังตรวจการเชื่อมต่อ</p>
+          </div>
+          <button id="clearButton" class="secondary-button" type="button">ล้างแชต</button>
+        </header>
+
+        <section id="chat" class="chat" aria-live="polite" aria-label="บทสนทนา"></section>
+
+        <section id="suggestions" class="suggestions" aria-label="คำถามแนะนำ">
+          <button type="button">สาขาไหนทำรายได้รวมสูงสุด</button>
+          <button type="button">สาขาไหนมี AOV สูงสุด</button>
+          <button type="button">เปรียบเทียบรายได้และ AOV ของทุกสาขา</button>
+        </section>
+
+        <form id="composer" class="composer">
+          <label class="sr-only" for="messageInput">คำถามเกี่ยวกับยอดขาย</label>
+          <textarea
+            id="messageInput"
+            rows="1"
+            maxlength="2000"
+            placeholder="ถามเรื่องยอดขาย สาขา เมนู หรือช่องทางการสั่งซื้อ"
+          ></textarea>
+          <button id="sendButton" class="send-button" type="submit">ส่ง</button>
+        </form>
+
+        <p class="privacy-note">
+          Browser ไม่ได้รับ Gemini key หรือ Snowflake PAT คำถามและผล query จะถูกส่งผ่าน backend ไปยัง Gemini
+          ประวัติแชตอยู่ในหน่วยความจำของหน้านี้ และผู้ให้บริการอาจเก็บ log ตามนโยบายของตน
+        </p>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "day4-cafe-chatbot-solution",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "smoke:snowflake": "node scripts/snowflake-smoke-test.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check server.mjs && node --check lib/query-tool.mjs && node --check lib/orders-schema.mjs && node --check lib/snowflake-sql-api.mjs && node --check lib/tool-loop.mjs && node --check scripts/snowflake-smoke-test.mjs && node --check public/app.js && node --check public/markdown.js && node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "2.18.0",
+    "dotenv": "17.4.2",
+    "express": "5.2.1"
+  }
+}
