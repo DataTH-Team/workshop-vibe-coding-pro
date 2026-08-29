@@ -70,20 +70,7 @@ tabs     Charts · Chat · AI Insights
 - `div[role="radiogroup"] label` ทำเป็นชิปแคปซูล ไม่งั้นได้วงกลมเริ่มต้นของ Streamlit
 - **ห้ามใช้ `st.selectbox` ใน sidebar พื้นเข้ม** — เรนเดอร์เป็นกล่องขาวเปล่า
   ไม่มีข้อความข้างใน (ตรวจจาก DOM จริงแล้ว) ใช้ `st.radio` แทน
-- **ลิงก์ระหว่างหน้าต้องใส่ `target="_self"` ทุกอัน**
-  Streamlit ไม่ยอมพาไปหน้าใหม่ถ้าไม่ใส่ กดแล้วเหมือนไม่มีอะไรเกิดขึ้น
-  ```html
-  <a href="?view=analytics&city=Phuket" target="_self">
-  ```
-- **ค่าใน query param ต้อง encode ก่อน** ชื่อเมืองมีเว้นวรรค เช่น `Gold Coast`
-  ```python
-  from urllib.parse import quote
-  href = f"?view=analytics&city={quote(city)}"
-  ```
-- **อย่าเอา `<a>` ครอบ `<div>` ทั้งใบการ์ด** ให้ทำปุ่มลูกศรในการ์ดเป็น `<a>` แทน
-  ทั้งใบยังใส่ `cursor:pointer` กับ hover ได้เหมือนเดิม
-- **ปุ่มกลับหน้าแรกก็ใช้ `<a href="/" target="_self">`**
-  อย่าใช้ `st.button` คู่กับ `st.query_params.clear()` เพราะกดแล้วไม่กลับ
+- **ลูกศร/ปุ่มบนการ์ดต้องเป็น `<a href>` จริง** อย่าใส่ `<span>` เปล่าเพราะลอกจาก mockup
 - ต้องมี `.streamlit/config.toml` ปักธีมสว่าง ไม่งั้น dark mode จะอ่านไม่ออก
   ```toml
   [theme]

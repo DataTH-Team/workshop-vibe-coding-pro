@@ -13,14 +13,8 @@
       ทางเลือก 2  ผูกแค่ SQL warehouse ไปก่อน
                   แท็บ Charts ยังทำงานได้ปกติ เสียแค่แท็บ Chat ซึ่งเป็นของเพิ่ม
                   ค่อยกลับมาผูกทีหลังได้ ไม่ต้องสร้างแอปใหม่
-4 · สิทธิ์ Data
-      วันนี้ไม่ต้องทำอะไร samples เป็น catalog ที่แชร์ให้ทุกคนใน workspace อ่านได้อยู่แล้ว
-
-      จำเป็นเฉพาะตอนแอปไปอ่านตารางของเราเอง ให้รันใน SQL Editor
-      GRANT USE CATALOG ON CATALOG <catalog> TO `<app-name>`;
-      GRANT USE SCHEMA  ON SCHEMA  <catalog>.<schema> TO `<app-name>`;
-      GRANT SELECT      ON TABLE   <catalog>.<schema>.<table> TO `<app-name>`;
-      ชื่อ service principal ของแอปดูได้ที่หน้า App ช่อง App resources
+4 · ให้สิทธิ์ Data ที่ App query
+      USE CATALOG · USE SCHEMA · SELECT ให้ service principal ของแอป
 5 · app.yaml อ้าง resource key ผ่าน valueFrom ไม่ใช่พิมพ์ id ลงไปตรง ๆ
 
 env:

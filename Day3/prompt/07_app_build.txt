@@ -29,9 +29,6 @@ SPEC.md  AGENTS.md  DESIGN.md  assets.py  catto.png
 คำโปรยใช้ blurb_th จาก assets.py
 
 กดการ์ดเมืองแล้วไปหน้าแดชบอร์ดที่ ?view=analytics&city=ชื่อเมือง
-ลิงก์ทุกอันต้องใส่ target="_self" และ encode ค่าใน query param ด้วย quote
-ไม่งั้นกดการ์ดแล้วไม่ไปไหน
-
 หน้าแดชบอร์ดมี รายได้รวมปี 2025 กราฟเส้นรายเดือน กราฟแท่ง 10 เมือง
 และปุ่มกลับหน้าแรก
 
@@ -61,8 +58,6 @@ samples.wanderbricks.destinations
 - วาดประวัติก่อนช่องพิมพ์ แล้ว st.rerun() หลังได้คำตอบ
   ไม่งั้นข้อความใหม่จะไปโผล่ใต้ช่องพิมพ์
 
-ใช้ฟังก์ชัน ask_genie ตามที่เขียนไว้ใน AGENTS.md ทั้งก้อน ห้ามเขียนเอง
-
 อ่าน genie space id จาก env GENIE_SPACE_ID ห้าม hardcode
 แก้เฉพาะส่วนที่เกี่ยวกับแท็บใหม่ ส่วน Charts เดิมอย่าแตะ
 
@@ -91,4 +86,3 @@ CSS โผล่เป็นข้อความบนหน้าเว็บ 
 สร้าง .streamlit/config.toml ปักธีมสว่างตามที่ DESIGN.md เขียนไว้
 รูปเมืองผิด ให้ใช้ CITY_IMG จาก assets.py เท่านั้น ห้ามหารูปเอง
 หน้าตาไม่เหมือน index.html ให้กลับไปดู index.html แล้วทำตามโครงนั้น
-การ์ดกดแล้วไม่ไปไหน ทุก a href ต้องใส่ target="_self"
