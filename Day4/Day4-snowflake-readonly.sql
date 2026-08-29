@@ -75,6 +75,7 @@ ALTER USER cafe_bot
 --    INSERT และ DROP ต้อง ERROR (เขียนไม่ได้)
 
 USE ROLE cafe_readonly;
+USE SECONDARY ROLES NONE; -- ถ้าไม่ปิด ACCOUNTADMIN ยังทำงานอยู่ด้านหลัง INSERT/DROP จะผ่าน
 USE WAREHOUSE cafe_wh;
 
 -- ต้องสำเร็จ (ได้ 50000)
