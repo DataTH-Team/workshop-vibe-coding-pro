@@ -17,7 +17,7 @@
 ```
 ใช้ UI จาก Workshop 1 มาต่อยอด ปรับเฉพาะส่วนที่จำเป็น ให้ผู้ใช้คุยกับ Gemini ได้จริงแทนคำตอบตัวอย่าง
 
-เพิ่มส่วน Backend ส่งคำถามไป Gemini และนำคำตอบกลับมาแสดงในหน้า Chat โดยเก็บ Gemini API Key ไว้ในไฟล์ .env ห้ามแสดงคีย์ใน frontend
+เพิ่มส่วน Backend ด้วย NodeJS/Express ส่งคำถามไป Gemini และนำคำตอบกลับมาแสดงในหน้า Chat โดยเก็บ Gemini API Key ไว้ในไฟล์ .env ห้ามแสดงคีย์ใน frontend
 
 เชื่อมต่อ Backend <-> Gemini ด้วย google-genai SDK
 ```
